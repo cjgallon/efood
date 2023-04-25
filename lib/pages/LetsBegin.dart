@@ -63,7 +63,7 @@ class _LetsBeginWidgetState extends State<LetsBeginWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(0, 80, 0, 0),
                   child: ElevatedButton(
                     onPressed: () {
-                      print('Button pressed ...');
+                      Navigator.pushNamed(context, "/login");
                     },
                     child: Text(
                       'INICIAR SESION',
@@ -88,10 +88,10 @@ class _LetsBeginWidgetState extends State<LetsBeginWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
                   child: ElevatedButton(
                     onPressed: () {
-                      print('Button pressed ...');
+                      Navigator.pushNamed(context, "/signup");
                     },
                     child: Text(
-                      'INICIAR SESION',
+                      'REGISTRAR',
                       style: TextStyle(
                         fontFamily: 'Inter',
                         color: Colors.white,

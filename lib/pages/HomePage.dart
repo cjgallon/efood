@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:efood/components/defaultProducts.dart';
 
 class HomePageWidget extends StatefulWidget {
   const HomePageWidget({Key? key}) : super(key: key);
@@ -16,6 +17,24 @@ class _HomePageWidgetState extends State<HomePageWidget> {
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance
+        .addPostFrameCallback((_) async => await showModalBottomSheet(
+              isScrollControlled: true,
+              backgroundColor: Colors.transparent,
+              enableDrag: false,
+              context: context,
+              builder: (bottomSheetContext) {
+                return GestureDetector(
+                  onTap: () =>
+                      FocusScope.of(context).requestFocus(_unfocusNode),
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(
+                        horizontal: MediaQuery.of(context).size.width * 0.05),
+                    child: DefaultProductsWidget(),
+                  ),
+                );
+              },
+            ));
   }
 
   @override
@@ -116,7 +135,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       children: [
                         InkWell(
                           onTap: () {
-                            print("Tap sirve");
+                            Navigator.pushNamed(context, "/productdetails");
                           },
                           child: Container(
                             width: 100,
@@ -132,7 +151,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
+                              children: const [
                                 Text(
                                   'Hello World',
                                 ),
@@ -154,13 +173,13 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             color: Color(0xFF72D67E),
                           )),
                           child: IconButton(
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.add_rounded,
                               color: Colors.white,
                               size: 100,
                             ),
                             onPressed: () {
-                              print('IconButton pressed ...');
+                              Navigator.pushNamed(context, "/addproduct");
                             },
                           ),
                         )

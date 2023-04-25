@@ -63,7 +63,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                     width: 275,
                     height: 200,
                     decoration: BoxDecoration(
-                      color: Color(0x8C74D482),
+                      color: Color(0xFFFFFFFF),
                       borderRadius: BorderRadius.circular(10),
                       border: Border.all(
                         color: Color(0xFFCACACA),
@@ -79,7 +79,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                             width: 275,
                             height: 40,
                             decoration: BoxDecoration(
-                              color: Color(0x8C74D482),
+                              color: Color(0xFFFFFFFF),
                             ),
                             child: Align(
                               alignment: AlignmentDirectional(0, 0),
@@ -93,7 +93,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                         30, 0, 0, 0),
                                     child: Icon(
                                       Icons.mail_outlined,
-                                      color: Color(0xFF72D67E),
+                                      color: Color(0xFF74D482),
                                       size: 30,
                                     ),
                                   ),
@@ -182,7 +182,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                           width: 275,
                           height: 40,
                           decoration: BoxDecoration(
-                            color: Color(0x8C74D482),
+                            color: Color(0xFFFFFFFF),
                           ),
                           child: Align(
                             alignment: AlignmentDirectional(0, 0),
@@ -196,7 +196,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                       30, 0, 0, 0),
                                   child: Icon(
                                     Icons.lock,
-                                    color: Color(0xFF72D67E),
+                                    color: Color(0xFF74D482),
                                     size: 30,
                                   ),
                                 ),
@@ -279,7 +279,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                           width: 275,
                           height: 40,
                           decoration: BoxDecoration(
-                            color: Color(0x8C74D482),
+                            color: Color(0xFFFFFFFF),
                           ),
                           child: Align(
                             alignment: AlignmentDirectional(0, 0),
@@ -330,7 +330,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                 padding: EdgeInsetsDirectional.fromSTEB(0, 90, 0, 0),
                 child: ElevatedButton(
                   onPressed: () {
-                    print('Button pressed ...');
+                    Navigator.pushNamed(context, "/homepage");
                   },
                   style: ElevatedButton.styleFrom(
                     primary: Color(0xFF72D67E),

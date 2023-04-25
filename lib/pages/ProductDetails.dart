@@ -49,7 +49,7 @@ class _ProductDetailsWidgetState extends State<ProductDetailsWidget> {
                         size: 30,
                       ),
                       onPressed: () {
-                        print('IconButton pressed ...');
+                        Navigator.pushNamed(context, "/homepage");
                       },
                     ),
                   ],
@@ -66,7 +66,7 @@ class _ProductDetailsWidgetState extends State<ProductDetailsWidget> {
                         const Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
                           child: Text(
-                            'AGREGAR PRODUCTO',
+                            'DETALLES DEL PRODUCTO',
                             style: TextStyle(
                               fontFamily: 'Inter',
                               color: Color(0xFF74D482),
