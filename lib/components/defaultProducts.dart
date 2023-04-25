@@ -18,8 +18,8 @@ class _DefaultProductsWidgetState extends State<DefaultProductsWidget> {
       height: MediaQuery.of(context).size.height * 0.7,
       decoration: const BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadiusDirectional.only(
-              topStart: Radius.circular(10), topEnd: Radius.circular(10))),
+          borderRadius:
+              BorderRadiusDirectional.vertical(top: Radius.circular(10))),
       child: Padding(
         padding: EdgeInsetsDirectional.fromSTEB(10, 12, 10, 12),
         child: Column(
