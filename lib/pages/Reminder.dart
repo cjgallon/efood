@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:efood/components/defaultProducts.dart';
 
 class ReminderWidget extends StatefulWidget {
   const ReminderWidget({Key? key}) : super(key: key);
@@ -165,7 +166,25 @@ class _ReminderWidgetState extends State<ReminderWidget> {
                 Align(
                   alignment: const AlignmentDirectional(0, 0),
                   child: TextButton(
-                    onPressed: () {},
+                    onPressed: () async {
+                      await showModalBottomSheet(
+                        isScrollControlled: true,
+                        backgroundColor: Colors.transparent,
+                        enableDrag: false,
+                        context: context,
+                        builder: (bottomSheetContext) {
+                          return GestureDetector(
+                            onTap: () => FocusScope.of(context)
+                                .requestFocus(_unfocusNode),
+                            child: Padding(
+                              padding:
+                                  MediaQuery.of(bottomSheetContext).viewInsets,
+                              child: DefaultProductsWidget(),
+                            ),
+                          );
+                        },
+                      ).then((value) => setState(() {}));
+                    },
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(
                           const Color.fromARGB(100, 114, 214, 126)),
