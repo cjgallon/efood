@@ -21,24 +21,30 @@ class _HomePageWidgetState extends State<HomePageWidget> {
   @override
   void initState() {
     super.initState();
-    // WidgetsBinding.instance
-    //     .addPostFrameCallback((_) async => await showModalBottomSheet(
-    //           isScrollControlled: true,
-    //           backgroundColor: Colors.transparent,
-    //           enableDrag: false,
-    //           context: context,
-    //           builder: (bottomSheetContext) {
-    //             return GestureDetector(
-    //               onTap: () =>
-    //                   FocusScope.of(context).requestFocus(_unfocusNode),
-    //               child: Padding(
-    //                 padding: EdgeInsets.symmetric(
-    //                     horizontal: MediaQuery.of(context).size.width * 0.05),
-    //                 child: DefaultProductsWidget(),
-    //               ),
-    //             );
-    //           },
-    //         ));
+    showQuickProducts();
+  }
+
+  void showQuickProducts() {
+    Future.delayed(const Duration(milliseconds: 1000), () {
+      WidgetsBinding.instance
+          .addPostFrameCallback((_) async => await showModalBottomSheet(
+                isScrollControlled: true,
+                backgroundColor: Colors.transparent,
+                enableDrag: false,
+                context: context,
+                builder: (bottomSheetContext) {
+                  return GestureDetector(
+                    onTap: () =>
+                        FocusScope.of(context).requestFocus(_unfocusNode),
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: MediaQuery.of(context).size.width * 0.05),
+                      child: DefaultProductsWidget(),
+                    ),
+                  );
+                },
+              ));
+    });
   }
 
   @override
