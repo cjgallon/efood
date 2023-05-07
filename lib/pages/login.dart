@@ -1,4 +1,5 @@
 import 'package:efood/controllers/auth_controller.dart';
+import 'package:efood/controllers/login_controller.dart';
 import 'package:efood/pages/HomePage.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -18,19 +19,17 @@ class _LoginWidgetState extends State<LoginWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final _unfocusNode = FocusNode();
 
-  final emailController = TextEditingController();
-  final passwordController = TextEditingController();
-
+  final LoginController loginController = Get.put(LoginController());
   final AuthenticationController authenticationController = Get.find();
 
   Future<void> handleLogin() async {
-    final email = emailController.text;
-    final password = passwordController.text;
+    final email = loginController.getEmailText();
+    final password = loginController.getPasswordText();
 
     try {
       var authResult = await authenticationController.login(email, password);
       // handle successful login
-      Get.to(const HomePageWidget());
+      Get.to(() => const HomePageWidget());
     } catch (error) {
       // handle error
       if (error is String) {
@@ -64,8 +63,6 @@ class _LoginWidgetState extends State<LoginWidget> {
   void dispose() {
     _unfocusNode.dispose();
     super.dispose();
-    emailController.dispose();
-    passwordController.dispose();
   }
 
   @override
@@ -145,7 +142,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           10, 0, 0, 0),
                                       child: TextFormField(
-                                        controller: emailController,
+                                        controller:
+                                            loginController.emailController,
                                         autofocus: true,
                                         obscureText: false,
                                         decoration: InputDecoration(
@@ -248,7 +246,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         10, 0, 0, 0),
                                     child: TextFormField(
-                                      controller: passwordController,
+                                      controller:
+                                          loginController.passwordController,
                                       autofocus: true,
                                       obscureText: false,
                                       decoration: InputDecoration(
