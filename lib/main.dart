@@ -1,5 +1,6 @@
 import 'package:efood/FirebaseCentral.dart';
 import 'package:efood/config/configuration.dart';
+import 'package:efood/controllers/ui_controller.dart';
 import 'package:flutter/material.dart';
 // import 'package:efood/pages/Reminder.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -40,6 +41,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Get.put(AuthenticationController());
+    Get.put(UIController());
 
     return GetMaterialApp(
       title: 'Flutter Demo',

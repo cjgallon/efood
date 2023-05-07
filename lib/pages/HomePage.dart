@@ -1,4 +1,5 @@
 import 'package:efood/controllers/auth_controller.dart';
+import 'package:efood/controllers/ui_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -17,15 +18,19 @@ class _HomePageWidgetState extends State<HomePageWidget> {
   final _unfocusNode = FocusNode();
 
   final AuthenticationController authenticationController = Get.find();
+  final UIController uiController = Get.find();
 
   @override
   void initState() {
     super.initState();
-    showQuickProducts();
+    if (!uiController.quickProductsModalShown) {
+      uiController.closeQuickProductsModal();
+      showQuickProducts();
+    }
   }
 
   void showQuickProducts() {
-    Future.delayed(const Duration(milliseconds: 1000), () {
+    Future.delayed(const Duration(milliseconds: 500), () {
       WidgetsBinding.instance
           .addPostFrameCallback((_) async => await showModalBottomSheet(
                 isScrollControlled: true,
