@@ -63,10 +63,10 @@ class _SignupWidgetState extends State<SignupWidget> {
                     width: 275,
                     height: 400,
                     decoration: BoxDecoration(
-                      color: Color(0xFF74D482),
+                      color: Color(0xFFFFFFFF),
                       borderRadius: BorderRadius.circular(10),
                       border: Border.all(
-                        color: Color(0xFF74D482),
+                        color: Color(0xFFCACACA),
                         width: 5,
                       ),
                     ),
@@ -79,7 +79,7 @@ class _SignupWidgetState extends State<SignupWidget> {
                             width: 275,
                             height: 40,
                             decoration: BoxDecoration(
-                              color: Color(0xFF74D482),
+                              color: Color(0xFFFFFFFF),
                             ),
                             child: Align(
                               alignment: AlignmentDirectional(0, 0),
@@ -93,7 +93,7 @@ class _SignupWidgetState extends State<SignupWidget> {
                                         30, 10, 0, 0),
                                     child: Icon(
                                       Icons.person,
-                                      color: Color(0xFF72D67E),
+                                      color: Color(0xFF74D482),
                                       size: 30,
                                     ),
                                   ),
@@ -182,7 +182,7 @@ class _SignupWidgetState extends State<SignupWidget> {
                           width: 275,
                           height: 40,
                           decoration: BoxDecoration(
-                            color: Color(0xFF74D482),
+                            color: Color(0xFFFFFFFF),
                           ),
                           child: Align(
                             alignment: AlignmentDirectional(0, 0),
@@ -196,7 +196,7 @@ class _SignupWidgetState extends State<SignupWidget> {
                                       30, 10, 0, 0),
                                   child: Icon(
                                     Icons.mail_outlined,
-                                    color: Color(0xFF72D67E),
+                                    color: Color(0xFF74D482),
                                     size: 30,
                                   ),
                                 ),
@@ -279,7 +279,7 @@ class _SignupWidgetState extends State<SignupWidget> {
                           width: 275,
                           height: 40,
                           decoration: BoxDecoration(
-                            color: Color(0xFF74D482),
+                            color: Color(0xFFFFFFFF),
                           ),
                           child: Align(
                             alignment: AlignmentDirectional(0, 0),
@@ -293,7 +293,7 @@ class _SignupWidgetState extends State<SignupWidget> {
                                       30, 0, 0, 0),
                                   child: Icon(
                                     Icons.lock,
-                                    color: Color(0xFF72D67E),
+                                    color: Color(0xFF74D482),
                                     size: 30,
                                   ),
                                 ),
@@ -376,7 +376,7 @@ class _SignupWidgetState extends State<SignupWidget> {
                           width: 275,
                           height: 40,
                           decoration: BoxDecoration(
-                            color: Color(0xFF74D482),
+                            color: Color(0xFFFFFFFF),
                           ),
                           child: Align(
                             alignment: AlignmentDirectional(0, 0),
@@ -390,7 +390,7 @@ class _SignupWidgetState extends State<SignupWidget> {
                                       30, 0, 0, 0),
                                   child: Icon(
                                     Icons.lock,
-                                    color: Color(0xFF72D67E),
+                                    color: Color(0xFF74D482),
                                     size: 30,
                                   ),
                                 ),
@@ -506,7 +506,7 @@ class _SignupWidgetState extends State<SignupWidget> {
                           width: 275,
                           height: 40,
                           decoration: BoxDecoration(
-                            color: Color(0xFF74D482),
+                            color: Color(0xFFFFFFFF),
                           ),
                           child: Align(
                             alignment: AlignmentDirectional(0, 0),
@@ -526,7 +526,7 @@ class _SignupWidgetState extends State<SignupWidget> {
                                               BorderRadius.circular(0),
                                         ),
                                       ),
-                                      unselectedWidgetColor: Color(0xFF74D482),
+                                      unselectedWidgetColor: Color(0xFF757575),
                                     ),
                                     child: Checkbox(
                                       value: false,
@@ -544,7 +544,7 @@ class _SignupWidgetState extends State<SignupWidget> {
                                     'Acepto los terminos y condiciones',
                                     style: TextStyle(
                                       fontFamily: 'Poppins',
-                                      color: Color(0xFF72D67E),
+                                      color: Color(0xFF74D482),
                                       fontSize: 10,
                                     ),
                                   ),
@@ -564,7 +564,7 @@ class _SignupWidgetState extends State<SignupWidget> {
                     padding: EdgeInsetsDirectional.fromSTEB(0, 80, 0, 0),
                     child: ElevatedButton(
                       onPressed: () {
-                        print('Button pressed ...');
+                        Navigator.pushNamed(context, "/homepage");
                       },
                       child: Text(
                         'REGISTRARSE',

@@ -49,7 +49,7 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                         size: 30,
                       ),
                       onPressed: () {
-                        print('IconButton pressed ...');
+                        Navigator.pushNamed(context, "/homepage");
                       },
                     ),
                     IconButton(
@@ -59,7 +59,7 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                         size: 30,
                       ),
                       onPressed: () {
-                        print('IconButton pressed ...');
+                        Navigator.pushNamed(context, "/reminder");
                       },
                     ),
                   ],
@@ -474,16 +474,19 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                             padding:
                                 EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                             child: TextButton(
+                              style: const ButtonStyle(
+                                  backgroundColor: MaterialStatePropertyAll(
+                                      Color(0xFF74D482))),
                               child: const Text(
                                 "+ AGREGAR PRODUCTO",
                                 style: TextStyle(
-                                  fontFamily: 'Inter',
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w600,
-                                ),
+                                    fontFamily: 'Inter',
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 20),
                               ),
                               onPressed: () {
-                                print('Button pressed ...');
+                                Navigator.pushNamed(context, "/homepage");
                               },
                             ),
                           ),
