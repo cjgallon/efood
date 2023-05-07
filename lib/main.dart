@@ -1,7 +1,23 @@
+import 'package:efood/config/configuration.dart';
+import 'package:efood/pages/login.dart';
 import 'package:flutter/material.dart';
-import 'package:efood/pages/Reminder.dart';
+// import 'package:efood/pages/Reminder.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+      options: const FirebaseOptions(
+    apiKey: Configuration.apiKey,
+    authDomain: Configuration.authDomain,
+    databaseURL: Configuration.databaseURL,
+    projectId: Configuration.projectId,
+    // storageBucket: Configuration.storageBucket,
+    messagingSenderId: Configuration.messagingSenderId,
+    appId: Configuration.appId,
+    // measurementId: Configuration.measurementId),
+  ));
+
   runApp(const MyApp());
 }
 
@@ -25,7 +41,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const ReminderWidget(),
+      home: const LoginWidget(),
     );
   }
 }
