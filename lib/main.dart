@@ -1,13 +1,30 @@
+import 'package:efood/config/configuration.dart';
 import 'package:flutter/material.dart';
+// import 'package:efood/pages/Reminder.dart';
+import 'package:firebase_core/firebase_core.dart';
+
 import 'pages/AddProduct.dart';
 import 'pages/ProductDetails.dart';
-import 'pages/Login.dart';
+import 'pages/login.dart';
 import 'pages/HomePage.dart';
 import 'pages/Reminder.dart';
 import 'pages/LetsBegin.dart';
 import 'pages/Signup.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+      options: const FirebaseOptions(
+    apiKey: Configuration.apiKey,
+    authDomain: Configuration.authDomain,
+    databaseURL: Configuration.databaseURL,
+    projectId: Configuration.projectId,
+    // storageBucket: Configuration.storageBucket,
+    messagingSenderId: Configuration.messagingSenderId,
+    appId: Configuration.appId,
+    // measurementId: Configuration.measurementId),
+  ));
+
   runApp(const MyApp());
 }
 

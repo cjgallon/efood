@@ -16,6 +16,29 @@ class _ReminderWidgetState extends State<ReminderWidget> {
   final _unfocusNode = FocusNode();
 
   @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance
+        .addPostFrameCallback((_) async => await showModalBottomSheet(
+              isScrollControlled: true,
+              backgroundColor: Colors.transparent,
+              enableDrag: false,
+              context: context,
+              builder: (bottomSheetContext) {
+                return GestureDetector(
+                  onTap: () =>
+                      FocusScope.of(context).requestFocus(_unfocusNode),
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(
+                        horizontal: MediaQuery.of(context).size.width * 0.05),
+                    child: DefaultProductsWidget(),
+                  ),
+                );
+              },
+            ));
+  }
+
+  @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),

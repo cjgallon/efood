@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -14,6 +15,27 @@ class _LoginWidgetState extends State<LoginWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final _unfocusNode = FocusNode();
 
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+
+  Future<void> login() async {
+    final email = emailController.text;
+    final password = passwordController.text;
+
+    try {
+      var auth = await FirebaseAuth.instance
+          .signInWithEmailAndPassword(email: email, password: password);
+
+      //TODO: Redireccionar al usuario a la siguiente pantalla, guardando sus datos en el GetX o lo que sea
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'user-not-found') {
+        return Future.error("User not found");
+      } else if (e.code == 'wrong-password') {
+        return Future.error("Wrong password");
+      }
+    }
+  }
+
   @override
   void initState() {
     super.initState();
@@ -23,6 +45,8 @@ class _LoginWidgetState extends State<LoginWidget> {
   void dispose() {
     _unfocusNode.dispose();
     super.dispose();
+    emailController.dispose();
+    passwordController.dispose();
   }
 
   @override
@@ -102,7 +126,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           10, 0, 0, 0),
                                       child: TextFormField(
-                                        //controller: _model.textController1,
+                                        controller: emailController,
                                         autofocus: true,
                                         obscureText: false,
                                         decoration: InputDecoration(
@@ -205,7 +229,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         10, 0, 0, 0),
                                     child: TextFormField(
-                                      //controller: _model.textController2,
+                                      controller: passwordController,
                                       autofocus: true,
                                       obscureText: false,
                                       decoration: InputDecoration(
@@ -329,8 +353,8 @@ class _LoginWidgetState extends State<LoginWidget> {
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0, 90, 0, 0),
                 child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, "/homepage");
+                  onPressed: () async {
+                    login();
                   },
                   style: ElevatedButton.styleFrom(
                     primary: Color(0xFF72D67E),
