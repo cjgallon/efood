@@ -1,8 +1,10 @@
+import 'package:efood/controllers/auth_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 
 class LoginWidget extends StatefulWidget {
   const LoginWidget({Key? key}) : super(key: key);
@@ -18,20 +20,35 @@ class _LoginWidgetState extends State<LoginWidget> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
-  Future<void> login() async {
+  final AuthenticationController authenticationController = Get.find();
+
+  Future<void> handleLogin() async {
     final email = emailController.text;
     final password = passwordController.text;
 
     try {
-      var auth = await FirebaseAuth.instance
-          .signInWithEmailAndPassword(email: email, password: password);
-
-      //TODO: Redireccionar al usuario a la siguiente pantalla, guardando sus datos en el GetX o lo que sea
-    } on FirebaseAuthException catch (e) {
-      if (e.code == 'user-not-found') {
-        return Future.error("User not found");
-      } else if (e.code == 'wrong-password') {
-        return Future.error("Wrong password");
+      var authResult = await authenticationController.login(email, password);
+      // handle successful login
+    } catch (error) {
+      // handle error
+      if (error is String) {
+        // handle user not found or wrong password error
+        showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+            title: const Text("Error"),
+            content: Text(error),
+            actions: [
+              FloatingActionButton(
+                onPressed: () => Navigator.of(context).pop(),
+                child: const Text("Continue"),
+              ),
+            ],
+          ),
+        );
+      } else {
+        // handle other types of errors
+        print(error.toString());
       }
     }
   }
@@ -354,7 +371,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                 padding: EdgeInsetsDirectional.fromSTEB(0, 90, 0, 0),
                 child: ElevatedButton(
                   onPressed: () async {
-                    login();
+                    handleLogin();
                   },
                   style: ElevatedButton.styleFrom(
                     primary: Color(0xFF72D67E),

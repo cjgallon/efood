@@ -2,6 +2,9 @@ import 'package:efood/config/configuration.dart';
 import 'package:flutter/material.dart';
 // import 'package:efood/pages/Reminder.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:get/get.dart';
+
+import 'controllers/auth_controller.dart';
 
 import 'pages/AddProduct.dart';
 import 'pages/ProductDetails.dart';
@@ -35,6 +38,8 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    Get.put(AuthenticationController());
+
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
