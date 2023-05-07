@@ -1,4 +1,6 @@
+import 'package:efood/controllers/auth_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:efood/components/defaultProducts.dart';
@@ -14,27 +16,29 @@ class _HomePageWidgetState extends State<HomePageWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final _unfocusNode = FocusNode();
 
+  final AuthenticationController authenticationController = Get.find();
+
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance
-        .addPostFrameCallback((_) async => await showModalBottomSheet(
-              isScrollControlled: true,
-              backgroundColor: Colors.transparent,
-              enableDrag: false,
-              context: context,
-              builder: (bottomSheetContext) {
-                return GestureDetector(
-                  onTap: () =>
-                      FocusScope.of(context).requestFocus(_unfocusNode),
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(
-                        horizontal: MediaQuery.of(context).size.width * 0.05),
-                    child: DefaultProductsWidget(),
-                  ),
-                );
-              },
-            ));
+    // WidgetsBinding.instance
+    //     .addPostFrameCallback((_) async => await showModalBottomSheet(
+    //           isScrollControlled: true,
+    //           backgroundColor: Colors.transparent,
+    //           enableDrag: false,
+    //           context: context,
+    //           builder: (bottomSheetContext) {
+    //             return GestureDetector(
+    //               onTap: () =>
+    //                   FocusScope.of(context).requestFocus(_unfocusNode),
+    //               child: Padding(
+    //                 padding: EdgeInsets.symmetric(
+    //                     horizontal: MediaQuery.of(context).size.width * 0.05),
+    //                 child: DefaultProductsWidget(),
+    //               ),
+    //             );
+    //           },
+    //         ));
   }
 
   @override
@@ -66,7 +70,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       size: 30,
                     ),
                     onPressed: () {
-                      print('IconButton pressed ...');
+                      // print('IconButton pressed ...');
+                      //TODO: move to a different button
+                      authenticationController.logout();
                     },
                   ),
                   Expanded(

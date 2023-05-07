@@ -1,4 +1,5 @@
 import 'package:efood/controllers/auth_controller.dart';
+import 'package:efood/pages/HomePage.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -29,6 +30,7 @@ class _LoginWidgetState extends State<LoginWidget> {
     try {
       var authResult = await authenticationController.login(email, password);
       // handle successful login
+      Get.to(const HomePageWidget());
     } catch (error) {
       // handle error
       if (error is String) {

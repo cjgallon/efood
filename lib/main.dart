@@ -1,3 +1,4 @@
+import 'package:efood/FirebaseCentral.dart';
 import 'package:efood/config/configuration.dart';
 import 'package:flutter/material.dart';
 // import 'package:efood/pages/Reminder.dart';
@@ -40,7 +41,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     Get.put(AuthenticationController());
 
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -54,7 +55,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const LetsBeginWidget(),
+      home: const FirebaseCentral(),
       routes: {
         "/homepage": (context) => const HomePageWidget(),
         "/letsbegin": (context) => const LetsBeginWidget(),
