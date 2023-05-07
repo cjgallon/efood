@@ -1,5 +1,6 @@
 import 'package:efood/FirebaseCentral.dart';
 import 'package:efood/config/configuration.dart';
+import 'package:efood/controllers/product_controller.dart';
 import 'package:efood/controllers/ui_controller.dart';
 import 'package:flutter/material.dart';
 // import 'package:efood/pages/Reminder.dart';

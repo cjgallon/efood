@@ -1,4 +1,5 @@
 import 'package:efood/controllers/auth_controller.dart';
+import 'package:efood/controllers/product_controller.dart';
 import 'package:efood/controllers/ui_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -19,6 +20,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
 
   final AuthenticationController authenticationController = Get.find();
   final UIController uiController = Get.find();
+  final Product_Controller product_controller = Get.put(Product_Controller());
 
   @override
   void initState() {
@@ -141,67 +143,71 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   child: Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
                     child: GridView(
-                      padding: EdgeInsets.zero,
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 3,
-                        crossAxisSpacing: 10,
-                        mainAxisSpacing: 10,
-                        childAspectRatio: 1,
-                      ),
-                      scrollDirection: Axis.vertical,
-                      children: [
-                        InkWell(
-                          onTap: () {
-                            Navigator.pushNamed(context, "/productdetails");
-                          },
-                          child: Container(
-                            width: 100,
-                            height: 100,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(30),
-                              shape: BoxShape.rectangle,
-                              border: Border.all(
-                                color: Colors.black,
-                              ),
-                            ),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: const [
-                                Text(
-                                  'Hello World',
-                                ),
-                                Icon(
-                                  Icons.fastfood_rounded,
-                                  color: Colors.black,
-                                  size: 60,
-                                ),
-                                Text(
-                                  'Hello World',
-                                ),
-                              ],
-                            ),
-                          ),
+                        padding: EdgeInsets.zero,
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 3,
+                          crossAxisSpacing: 10,
+                          mainAxisSpacing: 10,
+                          childAspectRatio: 1,
                         ),
-                        Container(
-                          decoration: (BoxDecoration(
-                            borderRadius: BorderRadius.circular(30),
-                            color: Color(0xFF72D67E),
-                          )),
-                          child: IconButton(
-                            icon: const Icon(
-                              Icons.add_rounded,
-                              color: Colors.white,
-                              size: 100,
-                            ),
-                            onPressed: () {
-                              Navigator.pushNamed(context, "/addproduct");
-                            },
-                          ),
-                        )
-                      ],
-                    ),
+                        scrollDirection: Axis.vertical,
+                        children: product_controller.products
+                            .map((e) => InkWell(
+                                  onTap: () {
+                                    Navigator.pushNamed(
+                                        context, "/productdetails");
+                                  },
+                                  child: Container(
+                                    width: 100,
+                                    height: 100,
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(30),
+                                      shape: BoxShape.rectangle,
+                                      border: Border.all(
+                                        color: Colors.black,
+                                      ),
+                                    ),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceEvenly,
+                                      children: [
+                                        Text(
+                                          e["nombre"],
+                                        ),
+                                        Icon(
+                                          Icons.fastfood_rounded,
+                                          color: Colors.black,
+                                          size: 60,
+                                        ),
+                                        Text(
+                                          e["fecha"],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ))
+                            .toList()
+
+                        //   Container(
+                        //     decoration: (BoxDecoration(
+                        //       borderRadius: BorderRadius.circular(30),
+                        //       color: Color(0xFF72D67E),
+                        //     )),
+                        //     child: IconButton(
+                        //       icon: const Icon(
+                        //         Icons.add_rounded,
+                        //         color: Colors.white,
+                        //         size: 100,
+                        //       ),
+                        //       onPressed: () {
+                        //         Navigator.pushNamed(context, "/addproduct");
+                        //       },
+                        //     ),
+                        //   )
+                        // ],
+                        ),
                   ),
                 ),
               ),
@@ -215,7 +221,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         IconButton(
                           icon: Icon(
                             Icons.ad_units_outlined,
-                            color: Color(0xFF72D67E),
+                            color: Color(0xFF74D482),
                             size: 50,
                           ),
                           onPressed: () {
@@ -225,7 +231,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         IconButton(
                           icon: Icon(
                             Icons.format_list_bulleted,
-                            color: Color(0xFF72D67E),
+                            color: Color(0xFF74D482),
                             size: 50,
                           ),
                           onPressed: () {
@@ -235,7 +241,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         IconButton(
                           icon: Icon(
                             Icons.person,
-                            color: Color(0xFF72D67E),
+                            color: Color(0xFF74D482),
                             size: 50,
                           ),
                           onPressed: () {
@@ -248,6 +254,15 @@ class _HomePageWidgetState extends State<HomePageWidget> {
             ],
           ),
         )),
+        floatingActionButton: Padding(
+            padding: EdgeInsets.only(bottom: 70),
+            child: FloatingActionButton(
+              onPressed: () {
+                Navigator.pushNamed(context, "/addproduct");
+              },
+              backgroundColor: Color(0xFF74D482),
+              child: Icon(Icons.add_rounded, size: 40),
+            )),
       ),
     );
   }

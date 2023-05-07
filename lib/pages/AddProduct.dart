@@ -1,5 +1,7 @@
+import 'package:efood/controllers/product_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
@@ -13,6 +15,7 @@ class AddProductWidget extends StatefulWidget {
 class _AddProductWidgetState extends State<AddProductWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final _unfocusNode = FocusNode();
+  Product_Controller prods = Get.find();
   TextEditingController nombre = TextEditingController();
   TextEditingController fecha = TextEditingController();
   String? categoria = "a";
@@ -514,6 +517,13 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                                     fontSize: 20),
                               ),
                               onPressed: () {
+                                prods.products.add({
+                                  "nombre": nombre.text,
+                                  "fecha": fecha.text,
+                                  "categoria": categoria,
+                                  "almacenamiento": almacenamiento,
+                                  "cantidad": cantidad
+                                });
                                 Navigator.pushNamed(context, "/homepage");
                               },
                             ),
