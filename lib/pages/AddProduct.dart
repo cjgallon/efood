@@ -13,7 +13,11 @@ class AddProductWidget extends StatefulWidget {
 class _AddProductWidgetState extends State<AddProductWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final _unfocusNode = FocusNode();
-
+  TextEditingController nombre = TextEditingController();
+  TextEditingController fecha = TextEditingController();
+  String? categoria = "a";
+  String? almacenamiento = "1";
+  int cantidad = 0;
   @override
   void initState() {
     super.initState();
@@ -90,7 +94,7 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                           child: Container(
                             width: MediaQuery.of(context).size.width * 0.5,
                             child: TextFormField(
-                              //controller: _model.textController1,
+                              controller: nombre,
                               autofocus: true,
                               obscureText: false,
                               decoration: const InputDecoration(
@@ -155,13 +159,14 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 10),
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0, 20, 0, 10),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
+                            children: const [
                               FaIcon(
-                                FontAwesomeIcons.solidCalendarAlt,
+                                FontAwesomeIcons.solidCalendarDays,
                                 color: Color(0xFF74d482),
                                 size: 30,
                               ),
@@ -182,16 +187,36 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                           ),
                         ),
                         Padding(
-                          padding:
-                              EdgeInsetsDirectional.fromSTEB(60, 0, 60, 10),
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              60, 0, 60, 10),
                           child: Container(
                             width: MediaQuery.of(context).size.width * 0.5,
                             child: TextFormField(
-                              //controller: _model.textController2,
+                              controller: fecha,
                               autofocus: true,
+                              onTap: () {
+                                showDatePicker(
+                                        context: context,
+                                        initialDate: DateTime.now(),
+                                        firstDate: DateTime.now(),
+                                        lastDate: (DateTime.now()
+                                            .add(const Duration(days: 730))))
+                                    .then((value) => {
+                                          if (value != null)
+                                            {
+                                              fecha.text =
+                                                  value.toIso8601String()
+                                            }
+                                          else
+                                            {
+                                              fecha.text = DateTime.now()
+                                                  .toIso8601String()
+                                            }
+                                        });
+                              },
                               obscureText: false,
-                              decoration: InputDecoration(
-                                hintText: '[Some hint text...]',
+                              decoration: const InputDecoration(
+                                hintText: 'fecha',
                                 hintStyle: TextStyle(
                                   fontFamily: 'Inter',
                                   color: Color(0xFF57636c),
@@ -202,7 +227,7 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                                     color: Color(0xFFe0e0e0),
                                     width: 2,
                                   ),
-                                  borderRadius: const BorderRadius.only(
+                                  borderRadius: BorderRadius.only(
                                     topLeft: Radius.circular(4.0),
                                     topRight: Radius.circular(4.0),
                                   ),
@@ -212,7 +237,7 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                                     color: Color(0x00000000),
                                     width: 2,
                                   ),
-                                  borderRadius: const BorderRadius.only(
+                                  borderRadius: BorderRadius.only(
                                     topLeft: Radius.circular(4.0),
                                     topRight: Radius.circular(4.0),
                                   ),
@@ -222,7 +247,7 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                                     color: Color(0x00000000),
                                     width: 2,
                                   ),
-                                  borderRadius: const BorderRadius.only(
+                                  borderRadius: BorderRadius.only(
                                     topLeft: Radius.circular(4.0),
                                     topRight: Radius.circular(4.0),
                                   ),
@@ -232,13 +257,13 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                                     color: Color(0x00000000),
                                     width: 2,
                                   ),
-                                  borderRadius: const BorderRadius.only(
+                                  borderRadius: BorderRadius.only(
                                     topLeft: Radius.circular(4.0),
                                     topRight: Radius.circular(4.0),
                                   ),
                                 ),
                               ),
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontFamily: 'Inter',
                                 color: Color(0xFF57636c),
                                 fontSize: 12,
@@ -250,13 +275,13 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                             ),
                           ),
                         ),
-                        Divider(
+                        const Divider(
                           thickness: 2,
                           indent: 20,
                           endIndent: 20,
                           color: Color(0x7D757575),
                         ),
-                        Padding(
+                        const Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(30, 0, 0, 20),
                           child: Text(
                             'Detalles',
@@ -269,20 +294,21 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(40, 0, 0, 20),
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              40, 0, 0, 20),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
-                              Icon(
+                              const Icon(
                                 Icons.inventory,
                                 color: Color(0xFF74d482),
                                 size: 40,
                               ),
                               Align(
-                                alignment: AlignmentDirectional(0, 0),
+                                alignment: const AlignmentDirectional(0, 0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10, 0, 0, 0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -301,10 +327,7 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                                         ),
                                       ),
                                       DropdownButton<String>(
-                                        value: "1",
-                                        //controller: _model
-                                        //      .dropDownValueController1 ??=
-                                        //FormFieldController<String>(null),
+                                        value: almacenamiento,
                                         items: const [
                                           DropdownMenuItem(
                                             value: "1",
@@ -319,8 +342,8 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                                             child: Text('3'),
                                           )
                                         ],
-                                        onChanged: (val) =>
-                                            setState(() => val = val),
+                                        onChanged: (val) => setState(
+                                            () => almacenamiento = val),
                                         style: const TextStyle(
                                           fontFamily: 'Inter',
                                           color: Color(0xFF757575),
@@ -338,20 +361,21 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(40, 0, 0, 20),
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              40, 0, 0, 20),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
-                              Icon(
+                              const Icon(
                                 Icons.category_rounded,
                                 color: Color(0xFF74d482),
                                 size: 40,
                               ),
                               Align(
-                                alignment: AlignmentDirectional(0, 0),
+                                alignment: const AlignmentDirectional(0, 0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10, 0, 0, 0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -370,10 +394,7 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                                         ),
                                       ),
                                       DropdownButton<String>(
-                                        value: "a",
-                                        //controller: _model
-                                        //      .dropDownValueController1 ??=
-                                        //FormFieldController<String>(null),
+                                        value: categoria,
                                         items: const [
                                           DropdownMenuItem(
                                             value: "a",
@@ -389,7 +410,7 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                                           )
                                         ],
                                         onChanged: (val) =>
-                                            setState(() => val = val),
+                                            setState(() => categoria = val),
                                         style: const TextStyle(
                                           fontFamily: 'Inter',
                                           color: Color(0xFF757575),
@@ -407,7 +428,8 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(40, 0, 0, 0),
+                          padding:
+                              const EdgeInsetsDirectional.fromSTEB(40, 0, 0, 0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
@@ -441,12 +463,16 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                                           size: 30,
                                         ),
                                         onPressed: () {
-                                          print('IconButton pressed ...');
+                                          setState(() {
+                                            if (cantidad > 1) {
+                                              cantidad--;
+                                            }
+                                          });
                                         },
                                       ),
-                                      const Text(
-                                        '0',
-                                        style: TextStyle(
+                                      Text(
+                                        cantidad.toString(),
+                                        style: const TextStyle(
                                           fontFamily: 'Inter',
                                           color: Color(0xFF757575),
                                           fontSize: 18,
@@ -460,7 +486,9 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                                           size: 30,
                                         ),
                                         onPressed: () {
-                                          print('IconButton pressed ...');
+                                          setState(() {
+                                            cantidad++;
+                                          });
                                         },
                                       ),
                                     ],
@@ -469,10 +497,10 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(0, 0),
+                          alignment: const AlignmentDirectional(0, 0),
                           child: Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0, 20, 0, 0),
                             child: TextButton(
                               style: const ButtonStyle(
                                   backgroundColor: MaterialStatePropertyAll(
@@ -496,17 +524,17 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                   ),
                 ),
               ),
-              Divider(
+              const Divider(
                 thickness: 2,
                 color: Color(0xFFe0e0e0),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(40, 0, 0, 0),
+                padding: const EdgeInsetsDirectional.fromSTEB(40, 0, 0, 0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     IconButton(
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.keyboard_arrow_up_rounded,
                         color: Color(0x8E757575),
                         size: 30,
@@ -515,7 +543,7 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                         print('IconButton pressed ...');
                       },
                     ),
-                    Text(
+                    const Text(
                       'Mostrar sugerencias',
                       style: TextStyle(
                         fontFamily: 'Inter',
