@@ -1,3 +1,4 @@
+import 'package:efood/controllers/auth_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -13,7 +14,10 @@ class SignupWidget extends StatefulWidget {
 class _SignupWidgetState extends State<SignupWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final _unfocusNode = FocusNode();
-
+  final AuthenticationController authcon = AuthenticationController();
+  final TextEditingController email = TextEditingController();
+  final TextEditingController password = TextEditingController();
+  bool check = false;
   @override
   void initState() {
     super.initState();
@@ -205,7 +209,7 @@ class _SignupWidgetState extends State<SignupWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         10, 0, 0, 0),
                                     child: TextFormField(
-                                      //controller: _model.textController2,
+                                      controller: email,
                                       autofocus: true,
                                       obscureText: false,
                                       decoration: InputDecoration(
@@ -302,7 +306,7 @@ class _SignupWidgetState extends State<SignupWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         10, 0, 0, 0),
                                     child: TextFormField(
-                                      //controller: _model.textController3,
+                                      controller: password,
                                       autofocus: true,
                                       obscureText: false,
                                       decoration: InputDecoration(
@@ -529,9 +533,9 @@ class _SignupWidgetState extends State<SignupWidget> {
                                       unselectedWidgetColor: Color(0xFF757575),
                                     ),
                                     child: Checkbox(
-                                      value: false,
+                                      value: check,
                                       onChanged: (newValue) async {
-                                        setState(() => newValue = newValue!);
+                                        setState(() => check = newValue!);
                                       },
                                       activeColor: Colors.black,
                                     ),
@@ -564,6 +568,7 @@ class _SignupWidgetState extends State<SignupWidget> {
                     padding: EdgeInsetsDirectional.fromSTEB(0, 80, 0, 0),
                     child: ElevatedButton(
                       onPressed: () {
+                        authcon.signup(email.text, password.text);
                         Navigator.pushNamed(context, "/homepage");
                       },
                       child: Text(

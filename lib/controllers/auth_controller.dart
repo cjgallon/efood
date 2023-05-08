@@ -26,26 +26,29 @@ class AuthenticationController extends GetxController {
   }
 
   // método usado para crear un usuario
-  // Future<void> signup(email, password) async {
-  //   try {
-  //     // primero creamos el usuario en el sistema de autenticación de firebase
-  //     UserCredential userCredential = await FirebaseAuth.instance
-  //         .createUserWithEmailAndPassword(email: email, password: password);
+  Future<void> signup(email, password) async {
+    var user = await FirebaseAuth.instance
+        .createUserWithEmailAndPassword(email: email, password: password);
+    //   try {
+    //     // primero creamos el usuario en el sistema de autenticación de firebase
+    //     UserCredential userCredential = await FirebaseAuth.instance
+    //         .createUserWithEmailAndPassword(email: email, password: password);
 
-  //     UserController userController = Get.find();
+    //     UserController userController = Get.find();
 
-  //     // después creamos el usuario en la base de datos de tiempo real usando el
-  //     // userController
-  //     await userController.createUser(email, userCredential.user!.uid);
-  //     return Future.value();
-  //   } on FirebaseAuthException catch (e) {
-  //     if (e.code == 'weak-password') {
-  //       return Future.error("The password is too weak");
-  //     } else if (e.code == 'email-already-in-use') {
-  //       return Future.error("The email is taken");
-  //     }
-  //   }
-  // }
+    //     // después creamos el usuario en la base de datos de tiempo real usando el
+    //     // userController
+    //     await userController.createUser(email, userCredential.user!.uid);
+    //     return Future.value();
+    //   } on FirebaseAuthException catch (e) {
+    //     if (e.code == 'weak-password') {
+    //       return Future.error("The password is too weak");
+    //     } else if (e.code == 'email-already-in-use') {
+    //       return Future.error("The email is taken");
+    //     }
+    //   }
+    // }
+  }
 
   // método usado para hacer el signOut
   logout() async {

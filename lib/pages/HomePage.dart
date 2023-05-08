@@ -83,7 +83,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       size: 30,
                     ),
                     onPressed: () {
-                      // print('IconButton pressed ...');
+                      print('IconButton pressed ...');
                       //TODO: move to a different button
                       authenticationController.logout();
                     },

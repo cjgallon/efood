@@ -15,7 +15,7 @@ class AddProductWidget extends StatefulWidget {
 class _AddProductWidgetState extends State<AddProductWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final _unfocusNode = FocusNode();
-  Product_Controller prods = Get.find();
+  Product_Controller product_controller = Get.find();
   TextEditingController nombre = TextEditingController();
   TextEditingController fecha = TextEditingController();
   String? categoria = "a";
@@ -517,13 +517,14 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                                     fontSize: 20),
                               ),
                               onPressed: () {
-                                prods.products.add({
+                                Map<String, dynamic> prod = {
                                   "nombre": nombre.text,
                                   "fecha": fecha.text,
                                   "categoria": categoria,
                                   "almacenamiento": almacenamiento,
                                   "cantidad": cantidad
-                                });
+                                };
+                                product_controller.products.add(prod);
                                 Navigator.pushNamed(context, "/homepage");
                               },
                             ),
