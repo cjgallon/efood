@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 class Product_Controller extends GetxController {
   List<Map<String, dynamic>> products = [];
   final databaseRef = FirebaseDatabase.instance.ref();
+  Map<String, dynamic>? selectedProduct;
   Future<void> createProduct(Map<String, dynamic> product) async {
     products.add(product);
     try {
@@ -37,6 +38,7 @@ class Product_Controller extends GetxController {
               event.snapshot.value as Map<dynamic, dynamic>;
           values.forEach((key, values) {
             print(values);
+
             final Map<String, dynamic> product = {
               "almacenamiento": values['almacenamiento'],
               "cantidad": values['cantidad'],

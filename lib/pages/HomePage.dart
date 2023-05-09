@@ -19,7 +19,7 @@ class HomePageWidget extends StatefulWidget {
 class _HomePageWidgetState extends State<HomePageWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
   // final _unfocusNode = FocusNode();
-
+  List<Map<String, dynamic>> productList = [];
   final AuthenticationController authenticationController = Get.find();
   final UIController uiController = Get.find();
   final Product_Controller product_controller = Get.find();
@@ -29,34 +29,35 @@ class _HomePageWidgetState extends State<HomePageWidget> {
     super.initState();
     print("Init homepage");
     getProducts();
+    setState(() {
+      productList = product_controller.products;
+    });
   }
 
   void showQuickProducts() {
-    Future.delayed(const Duration(milliseconds: 500), () {
-      WidgetsBinding.instance
-          .addPostFrameCallback((_) async => await showModalBottomSheet(
-                isScrollControlled: true,
-                backgroundColor: Colors.transparent,
-                enableDrag: false,
-                context: context,
-                builder: (bottomSheetContext) {
-                  return Padding(
-                    padding: EdgeInsets.symmetric(
-                        horizontal: MediaQuery.of(context).size.width * 0.05),
-                    child: DefaultProductsWidget(),
-                  );
-                  // return GestureDetector(
-                  //   onTap: () =>
-                  //       FocusScope.of(context).requestFocus(_unfocusNode),
-                  //   child: Padding(
-                  //     padding: EdgeInsets.symmetric(
-                  //         horizontal: MediaQuery.of(context).size.width * 0.05),
-                  //     child: DefaultProductsWidget(),
-                  //   ),
-                  // );
-                },
-              ));
-    });
+    WidgetsBinding.instance
+        .addPostFrameCallback((_) async => await showModalBottomSheet(
+              isScrollControlled: true,
+              backgroundColor: Colors.transparent,
+              enableDrag: false,
+              context: context,
+              builder: (bottomSheetContext) {
+                return Padding(
+                  padding: EdgeInsets.symmetric(
+                      horizontal: MediaQuery.of(context).size.width * 0.05),
+                  child: DefaultProductsWidget(),
+                );
+                // return GestureDetector(
+                //   onTap: () =>
+                //       FocusScope.of(context).requestFocus(_unfocusNode),
+                //   child: Padding(
+                //     padding: EdgeInsets.symmetric(
+                //         horizontal: MediaQuery.of(context).size.width * 0.05),
+                //     child: DefaultProductsWidget(),
+                //   ),
+                // );
+              },
+            ));
   }
 
   @override
@@ -88,7 +89,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
 
   @override
   Widget build(BuildContext context) {
-    print(product_controller.products);
+    print(productList);
 
     return Scaffold(
       key: scaffoldKey,
@@ -176,7 +177,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         childAspectRatio: 1,
                       ),
                       scrollDirection: Axis.vertical,
-                      children: product_controller.products
+                      children: productList
                           .map((e) => InkWell(
                                 onTap: () {
                                   Navigator.pushNamed(
