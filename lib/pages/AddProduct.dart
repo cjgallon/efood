@@ -22,7 +22,7 @@ class _AddProductWidgetState extends State<AddProductWidget> {
   TextEditingController fecha = TextEditingController();
   String? categoria = "a";
   String? almacenamiento = "1";
-  int cantidad = 0;
+  int cantidad = 1;
   @override
   void initState() {
     super.initState();

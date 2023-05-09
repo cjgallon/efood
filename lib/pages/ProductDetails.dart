@@ -1,3 +1,4 @@
+import 'package:efood/controllers/product_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
@@ -25,7 +26,6 @@ class _ProductDetailsWidgetState extends State<ProductDetailsWidget> {
   @override
   void initState() {
     super.initState();
-    print(product_controller.selectedProduct);
     setState(() {
       Map<String, dynamic>? selprod = product_controller.selectedProduct;
       if (selprod != null) {
