@@ -25,6 +25,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
   @override
   void initState() {
     super.initState();
+    product_controller.cleanProducts();
+    product_controller.getUserProducts(authenticationController.getUid());
+    //product_controller.products.add(product_controller.getUserProducts(authenticationController.getUid()));
     if (!uiController.quickProductsModalShown) {
       uiController.closeQuickProductsModal();
       showQuickProducts();

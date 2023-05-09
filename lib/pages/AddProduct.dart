@@ -1,4 +1,5 @@
 import 'package:efood/controllers/product_controller.dart';
+import 'package:efood/controllers/auth_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
@@ -16,6 +17,7 @@ class _AddProductWidgetState extends State<AddProductWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final _unfocusNode = FocusNode();
   Product_Controller product_controller = Get.find();
+  AuthenticationController auth_controller = Get.find();
   TextEditingController nombre = TextEditingController();
   TextEditingController fecha = TextEditingController();
   String? categoria = "a";
@@ -522,9 +524,11 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                                   "fecha": fecha.text,
                                   "categoria": categoria,
                                   "almacenamiento": almacenamiento,
-                                  "cantidad": cantidad
+                                  "cantidad": cantidad,
+                                  "uid": auth_controller.getUid()
                                 };
-                                product_controller.products.add(prod);
+                                //product_controller.products.add(prod);
+                                product_controller.createProduct(prod);
                                 Navigator.pushNamed(context, "/homepage");
                               },
                             ),
