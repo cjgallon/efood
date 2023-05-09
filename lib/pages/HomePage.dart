@@ -80,9 +80,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
   void _logout() async {
     try {
       uiController.reset();
-      await authenticationController.logout().then((value) {
-        Get.to(() => const FirebaseCentral());
-      });
+      await authenticationController.logout();
     } catch (e) {
       print(e);
     }
