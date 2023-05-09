@@ -1,3 +1,4 @@
+import 'package:efood/data/model/app_user.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:get/get.dart';
@@ -7,13 +8,17 @@ import 'package:get/get.dart';
 class AuthenticationController extends GetxController {
   final databaseReference = FirebaseDatabase.instance.ref();
 
+  User? user;
+
   // método usado para logearse en la aplicación
   Future<User?> login(email, password) async {
     try {
-      var user = await FirebaseAuth.instance
+      var userCredential = await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: email, password: password);
 
-      return user.user;
+      user = userCredential.user;
+
+      return userCredential.user;
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
         return Future.error("User not found");
@@ -60,12 +65,14 @@ class AuthenticationController extends GetxController {
   }
 
   String userEmail() {
-    String email = FirebaseAuth.instance.currentUser!.email ?? "a@a.com";
+    // String email = FirebaseAuth.instance.currentUser!.email ?? "a@a.com";
+    String email = user?.email ?? "";
     return email;
   }
 
   String getUid() {
-    String uid = FirebaseAuth.instance.currentUser!.uid;
+    // String uid = FirebaseAuth.instance.currentUser!.uid;
+    String uid = user?.uid ?? "";
     return uid;
   }
 }

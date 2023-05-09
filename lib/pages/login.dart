@@ -1,5 +1,8 @@
+import 'dart:convert';
+
 import 'package:efood/controllers/auth_controller.dart';
 import 'package:efood/controllers/login_controller.dart';
+import 'package:efood/data/model/app_user.dart';
 import 'package:efood/pages/HomePage.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -27,8 +30,9 @@ class _LoginWidgetState extends State<LoginWidget> {
     final password = loginController.getPasswordText();
 
     try {
-      var authResult = await authenticationController.login(email, password);
+      await authenticationController.login(email, password);
       // handle successful login
+
       Get.to(() => const HomePageWidget());
     } catch (error) {
       // handle error
