@@ -1,6 +1,7 @@
 import 'package:efood/controllers/auth_controller.dart';
 import 'package:efood/controllers/product_controller.dart';
 import 'package:efood/controllers/ui_controller.dart';
+import 'package:efood/pages/LetsBegin.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -63,6 +64,17 @@ class _HomePageWidgetState extends State<HomePageWidget> {
     super.dispose();
   }
 
+  void _logout() async {
+    try {
+      uiController.reset();
+      await authenticationController.logout().then((value) {
+        Get.to(() => const LetsBeginWidget());
+      });
+    } catch (e) {
+      print(e);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -86,9 +98,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       size: 30,
                     ),
                     onPressed: () {
-                      print('IconButton pressed ...');
-                      //TODO: move to a different button
-                      authenticationController.logout();
+                      print("IconButton pressed ...");
+                      _logout();
                     },
                   ),
                   Expanded(

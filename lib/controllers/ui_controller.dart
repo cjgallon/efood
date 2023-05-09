@@ -6,4 +6,8 @@ class UIController extends GetxController {
   void closeQuickProductsModal() {
     quickProductsModalShown = true;
   }
+
+  reset() {
+    quickProductsModalShown = false;
+  }
 }
