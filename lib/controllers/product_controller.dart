@@ -1,6 +1,6 @@
 import 'package:firebase_database/firebase_database.dart';
 import 'package:get/get.dart';
-
+import 'auth_controller.dart';
 import 'package:get/get.dart';
 
 class Product_Controller extends GetxController {
@@ -8,11 +8,24 @@ class Product_Controller extends GetxController {
   final databaseRef = FirebaseDatabase.instance.ref();
   Map<String, dynamic>? selectedProduct;
   Future<void> createProduct(Map<String, dynamic> product) async {
-    products.add(product);
     try {
-      await databaseRef.child('productList').push().set(product);
+      final ref = await databaseRef.child('productList').push();
+      String newKey = ref.key!;
+      ref.set(product);
+      product["pid"] = newKey;
+      products.add(product);
     } catch (e) {
       print(e);
+    }
+  }
+
+  Future<void> listenProducts() async {
+    final prodUpdate = databaseRef.child("productList");
+    final snapshot = await prodUpdate.get();
+    if (snapshot.exists) {
+      print(snapshot.value);
+    } else {
+      print('No data available.');
     }
   }
 

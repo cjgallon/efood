@@ -218,6 +218,23 @@ class _ProductDetailsWidgetState extends State<ProductDetailsWidget> {
                           child: TextFormField(
                             controller: fecha,
                             autofocus: true,
+                            onTap: () {
+                              showDatePicker(
+                                      context: context,
+                                      initialDate: DateTime.now(),
+                                      firstDate: DateTime.now(),
+                                      lastDate: (DateTime.now()
+                                          .add(const Duration(days: 730))))
+                                  .then((value) => {
+                                        if (value != null)
+                                          {fecha.text = value.toIso8601String()}
+                                        else
+                                          {
+                                            fecha.text =
+                                                DateTime.now().toIso8601String()
+                                          }
+                                      });
+                            },
                             obscureText: false,
                             decoration: const InputDecoration(
                               hintText: '[Some hint text...]',
@@ -500,7 +517,9 @@ class _ProductDetailsWidgetState extends State<ProductDetailsWidget> {
                                         size: 30,
                                       ),
                                       onPressed: () {
-                                        print('IconButton pressed ...');
+                                        setState(() {
+                                          cantidad++;
+                                        });
                                       },
                                     ),
                                   ],
