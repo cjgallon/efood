@@ -180,6 +180,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       children: productList
                           .map((e) => InkWell(
                                 onTap: () {
+                                  product_controller.selectedProduct = e;
                                   Navigator.pushNamed(
                                       context, "/productdetails");
                                 },
