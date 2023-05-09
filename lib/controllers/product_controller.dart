@@ -10,7 +10,6 @@ class Product_Controller extends GetxController {
     products.add(product);
     try {
       await databaseRef.child('productList').push().set(product);
-      print("dimelo manzana");
     } catch (e) {
       print(e);
     }

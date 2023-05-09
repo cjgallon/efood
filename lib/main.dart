@@ -43,6 +43,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     Get.put(AuthenticationController());
     Get.put(UIController());
+    Get.put(Product_Controller());
 
     return GetMaterialApp(
       title: 'Flutter Demo',
@@ -58,7 +59,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const FirebaseCentral(),
+      home: FirebaseCentral(),
       routes: {
         "/homepage": (context) => const HomePageWidget(),
         "/letsbegin": (context) => const LetsBeginWidget(),
