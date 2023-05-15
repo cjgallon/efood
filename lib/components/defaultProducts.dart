@@ -35,7 +35,7 @@ class _DefaultProductsWidgetState extends State<DefaultProductsWidget> {
                   child: Text(
                     'INICIO RÁPIDO',
                     style: TextStyle(
-                      fontFamily: GoogleFonts.getFont('Inter').fontFamily,
+                      fontFamily: GoogleFonts.getFont('Raleway').fontFamily,
                       fontWeight: FontWeight.w700,
                       color: Colors.black,
                       fontSize: MediaQuery.of(context).size.height * 0.035,
@@ -46,7 +46,8 @@ class _DefaultProductsWidgetState extends State<DefaultProductsWidget> {
                   onPressed: () {},
                   style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all(
-                        const Color.fromARGB(100, 114, 214, 126)),
+                      const Color(0xFF369c72),
+                    ),
                     shape: MaterialStateProperty.all(
                       const RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(Radius.circular(30)),
@@ -59,7 +60,7 @@ class _DefaultProductsWidgetState extends State<DefaultProductsWidget> {
                   child: Text(
                     'Finalizar',
                     style: TextStyle(
-                      fontFamily: GoogleFonts.getFont('Inter').fontFamily,
+                      fontFamily: GoogleFonts.getFont('Raleway').fontFamily,
                       fontWeight: FontWeight.w700,
                       color: Colors.white,
                       fontSize: MediaQuery.of(context).size.height * 0.015,
@@ -73,7 +74,7 @@ class _DefaultProductsWidgetState extends State<DefaultProductsWidget> {
               child: Text(
                 'Selecciona tus alimentos principales y agregalos con un solo toque',
                 style: TextStyle(
-                  fontFamily: GoogleFonts.getFont('Inter').fontFamily,
+                  fontFamily: GoogleFonts.getFont('Raleway').fontFamily,
                   fontWeight: FontWeight.w400,
                   color: Colors.black,
                   fontSize: MediaQuery.of(context).size.height * 0.015,

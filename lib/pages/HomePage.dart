@@ -248,7 +248,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       IconButton(
                         icon: Icon(
                           Icons.ad_units_outlined,
-                          color: Color(0xFF74D482),
+                          color: Color(0xFF368C72),
                           size: 50,
                         ),
                         onPressed: () {
@@ -258,7 +258,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       IconButton(
                         icon: Icon(
                           Icons.format_list_bulleted,
-                          color: Color(0xFF74D482),
+                          color: Color(0xFF368C72),
                           size: 50,
                         ),
                         onPressed: () {
@@ -268,7 +268,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       IconButton(
                         icon: Icon(
                           Icons.person,
-                          color: Color(0xFF74D482),
+                          color: Color(0xFF368C72),
                           size: 50,
                         ),
                         onPressed: () {
@@ -287,7 +287,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
             onPressed: () {
               Navigator.pushNamed(context, "/addproduct");
             },
-            backgroundColor: Color(0xFF74D482),
+            backgroundColor: Color(0xFF368C72),
             child: Icon(Icons.add_rounded, size: 40),
           )),
     );

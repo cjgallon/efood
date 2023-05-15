@@ -29,7 +29,7 @@ class _QuickProductWidgetState extends State<QuickProductWidget> {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           border: Border.all(
-            color: Color(0xFF7B7B7B),
+            color: Color(0xFFa7e9d1),
             width: 2,
           ),
         ),
@@ -49,7 +49,7 @@ class _QuickProductWidgetState extends State<QuickProductWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
                   child: Icon(
                     Icons.delete_outline,
-                    color: Color.fromARGB(100, 114, 214, 126),
+                    color: Color(0xFF369c72),
                     size: 20,
                   ),
                 ),
@@ -65,7 +65,8 @@ class _QuickProductWidgetState extends State<QuickProductWidget> {
                         Text(
                           widget.name,
                           style: TextStyle(
-                            fontFamily: GoogleFonts.getFont('Inter').fontFamily,
+                            fontFamily:
+                                GoogleFonts.getFont('Raleway').fontFamily,
                             fontWeight: FontWeight.w400,
                             color: Colors.black,
                             fontSize: MediaQuery.of(context).size.height * 0.02,
@@ -74,7 +75,8 @@ class _QuickProductWidgetState extends State<QuickProductWidget> {
                         Text(
                           widget.description,
                           style: TextStyle(
-                            fontFamily: GoogleFonts.getFont('Inter').fontFamily,
+                            fontFamily:
+                                GoogleFonts.getFont('Raleway').fontFamily,
                             fontWeight: FontWeight.w400,
                             color: Colors.black,
                             fontSize:
@@ -85,7 +87,7 @@ class _QuickProductWidgetState extends State<QuickProductWidget> {
                     ),
                     Container(
                       decoration: BoxDecoration(
-                        color: Color.fromARGB(100, 114, 214, 126),
+                        color: Color(0xFF369c72),
                         borderRadius: BorderRadius.circular(100),
                       ),
                       child: IconButton(

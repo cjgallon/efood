@@ -84,8 +84,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                 child: Text(
                   'POR FAVOR LLENA TUS DATOS',
                   style: TextStyle(
-                    fontFamily: 'Inter',
-                    color: Color(0xFF72D67E),
+                    fontFamily: 'Raleway',
+                    color: Color(0xFF368C72),
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
                   ),
@@ -107,7 +107,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                     color: Color(0xFFFFFFFF),
                     borderRadius: BorderRadius.circular(10),
                     border: Border.all(
-                      color: Color(0xFFCACACA),
+                      color: Color(0xFFa7e9d1),
                       width: 5,
                     ),
                   ),
@@ -134,7 +134,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                       30, 0, 0, 0),
                                   child: Icon(
                                     Icons.mail_outlined,
-                                    color: Color(0xFF74D482),
+                                    color: Color(0xFF368C72),
                                     size: 30,
                                   ),
                                 ),
@@ -150,7 +150,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                       decoration: InputDecoration(
                                         hintText: 'Correo Electrónico',
                                         hintStyle: TextStyle(
-                                          fontFamily: 'Inter',
+                                          fontFamily: 'Raleway',
                                           fontSize: 16,
                                         ),
                                         enabledBorder: UnderlineInputBorder(
@@ -196,7 +196,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                         ),
                                       ),
                                       style: TextStyle(
-                                        fontFamily: 'Inter',
+                                        fontFamily: 'Raleway',
                                         fontSize: 16,
                                       ),
                                       //validator: _model
@@ -234,7 +234,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     EdgeInsetsDirectional.fromSTEB(30, 0, 0, 0),
                                 child: Icon(
                                   Icons.lock,
-                                  color: Color(0xFF74D482),
+                                  color: Color(0xFF368C72),
                                   size: 30,
                                 ),
                               ),
@@ -250,7 +250,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     decoration: InputDecoration(
                                       hintText: 'Contraseña',
                                       hintStyle: TextStyle(
-                                        fontFamily: 'Inter',
+                                        fontFamily: 'Raleway',
                                         fontSize: 16,
                                       ),
                                       enabledBorder: UnderlineInputBorder(
@@ -295,7 +295,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                       ),
                                     ),
                                     style: TextStyle(
-                                      fontFamily: 'Inter',
+                                      fontFamily: 'Raleway',
                                       fontSize: 16,
                                     ),
                                     //validator: _model.textController2Validator
@@ -336,7 +336,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                         borderRadius: BorderRadius.circular(0),
                                       ),
                                     ),
-                                    unselectedWidgetColor: Color(0x8C74D482),
+                                    unselectedWidgetColor: Color(0xFF368C72),
                                   ),
                                   child: Checkbox(
                                     value: false,
@@ -350,7 +350,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                               Text(
                                 'Recordar cuenta',
                                 style: TextStyle(
-                                  fontFamily: 'Poppins',
+                                  fontFamily: 'Raleway',
                                   fontSize: 10,
                                 ),
                               ),
@@ -370,7 +370,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                   handleLogin();
                 },
                 style: ElevatedButton.styleFrom(
-                  primary: Color(0xFF72D67E),
+                  primary: Color(0xFF368C72),
                   padding: EdgeInsets.zero,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8),
@@ -387,7 +387,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                     child: Text(
                       'INICIAR SESION',
                       style: TextStyle(
-                        fontFamily: 'Inter',
+                        fontFamily: 'Raleway',
                         color: Colors.white,
                         fontSize: 26,
                       ),
@@ -416,7 +416,7 @@ class _LoginWidgetState extends State<LoginWidget> {
     //               child: Text(
     //                 'POR FAVOR LLENA TUS DATOS',
     //                 style: TextStyle(
-    //                   fontFamily: 'Inter',
+    //                   fontFamily: 'Raleway',
     //                   color: Color(0xFF72D67E),
     //                   fontSize: 24,
     //                   fontWeight: FontWeight.bold,
@@ -482,7 +482,7 @@ class _LoginWidgetState extends State<LoginWidget> {
     //                                     decoration: InputDecoration(
     //                                       hintText: 'Correo Electrónico',
     //                                       hintStyle: TextStyle(
-    //                                         fontFamily: 'Inter',
+    //                                         fontFamily: 'Raleway',
     //                                         fontSize: 16,
     //                                       ),
     //                                       enabledBorder: UnderlineInputBorder(
@@ -532,7 +532,7 @@ class _LoginWidgetState extends State<LoginWidget> {
     //                                       ),
     //                                     ),
     //                                     style: TextStyle(
-    //                                       fontFamily: 'Inter',
+    //                                       fontFamily: 'Raleway',
     //                                       fontSize: 16,
     //                                     ),
     //                                     //validator: _model
@@ -586,7 +586,7 @@ class _LoginWidgetState extends State<LoginWidget> {
     //                                   decoration: InputDecoration(
     //                                     hintText: 'Contraseña',
     //                                     hintStyle: TextStyle(
-    //                                       fontFamily: 'Inter',
+    //                                       fontFamily: 'Raleway',
     //                                       fontSize: 16,
     //                                     ),
     //                                     enabledBorder: UnderlineInputBorder(
@@ -632,7 +632,7 @@ class _LoginWidgetState extends State<LoginWidget> {
     //                                     ),
     //                                   ),
     //                                   style: TextStyle(
-    //                                     fontFamily: 'Inter',
+    //                                     fontFamily: 'Raleway',
     //                                     fontSize: 16,
     //                                   ),
     //                                   //validator: _model.textController2Validator
@@ -725,7 +725,7 @@ class _LoginWidgetState extends State<LoginWidget> {
     //                   child: Text(
     //                     'INICIAR SESION',
     //                     style: TextStyle(
-    //                       fontFamily: 'Inter',
+    //                       fontFamily: 'Raleway',
     //                       color: Colors.white,
     //                       fontSize: 26,
     //                     ),

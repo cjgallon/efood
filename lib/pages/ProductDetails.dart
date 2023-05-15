@@ -85,8 +85,8 @@ class _ProductDetailsWidgetState extends State<ProductDetailsWidget> {
                         child: Text(
                           'DETALLES DEL PRODUCTO',
                           style: TextStyle(
-                            fontFamily: 'Inter',
-                            color: Color(0xFF74D482),
+                            fontFamily: 'Raleway',
+                            color: Color(0xFF368C72),
                             fontSize: 28,
                             fontWeight: FontWeight.bold,
                           ),
@@ -106,7 +106,7 @@ class _ProductDetailsWidgetState extends State<ProductDetailsWidget> {
                                     10, 0, 10, 0),
                                 child: FaIcon(
                                   FontAwesomeIcons.utensils,
-                                  color: Color(0xFF74d482),
+                                  color: Color(0xFF368C72),
                                   size: 24,
                                 ),
                               ),
@@ -121,7 +121,7 @@ class _ProductDetailsWidgetState extends State<ProductDetailsWidget> {
                                   obscureText: false,
                                   decoration: const InputDecoration(
                                     hintStyle: TextStyle(
-                                      fontFamily: 'Inter',
+                                      fontFamily: 'Raleway',
                                       color: Color(0xFF757575),
                                       fontSize: 24,
                                       fontWeight: FontWeight.w500,
@@ -168,7 +168,7 @@ class _ProductDetailsWidgetState extends State<ProductDetailsWidget> {
                                     ),
                                   ),
                                   style: const TextStyle(
-                                    fontFamily: 'Inter',
+                                    fontFamily: 'Raleway',
                                     color: Color(0xB5757575),
                                     fontSize: 24,
                                     fontWeight: FontWeight.w500,
@@ -191,7 +191,7 @@ class _ProductDetailsWidgetState extends State<ProductDetailsWidget> {
                           children: const [
                             FaIcon(
                               FontAwesomeIcons.solidCalendarDays,
-                              color: Color(0xFF74d482),
+                              color: Color(0xFF368C72),
                               size: 30,
                             ),
                             Padding(
@@ -200,7 +200,7 @@ class _ProductDetailsWidgetState extends State<ProductDetailsWidget> {
                               child: Text(
                                 'Fecha aprox. de caducidad',
                                 style: TextStyle(
-                                  fontFamily: 'Inter',
+                                  fontFamily: 'Raleway',
                                   color: Color(0xFF757575),
                                   fontSize: 16,
                                   fontWeight: FontWeight.w500,
@@ -239,7 +239,7 @@ class _ProductDetailsWidgetState extends State<ProductDetailsWidget> {
                             decoration: const InputDecoration(
                               hintText: '[Some hint text...]',
                               hintStyle: TextStyle(
-                                fontFamily: 'Inter',
+                                fontFamily: 'Raleway',
                                 color: Color(0xFF57636c),
                                 fontSize: 12,
                               ),
@@ -285,7 +285,7 @@ class _ProductDetailsWidgetState extends State<ProductDetailsWidget> {
                               ),
                             ),
                             style: const TextStyle(
-                              fontFamily: 'Inter',
+                              fontFamily: 'Raleway',
                               color: Color(0xFF57636c),
                               fontSize: 12,
                               fontWeight: FontWeight.w300,
@@ -307,8 +307,8 @@ class _ProductDetailsWidgetState extends State<ProductDetailsWidget> {
                         child: Text(
                           'Detalles',
                           style: TextStyle(
-                            fontFamily: 'Inter',
-                            color: Color(0xFF74d482),
+                            fontFamily: 'Raleway',
+                            color: Color(0xFF368C72),
                             fontSize: 17,
                             fontWeight: FontWeight.bold,
                           ),
@@ -323,7 +323,7 @@ class _ProductDetailsWidgetState extends State<ProductDetailsWidget> {
                           children: [
                             const Icon(
                               Icons.inventory,
-                              color: Color(0xFF74d482),
+                              color: Color(0xFF368C72),
                               size: 40,
                             ),
                             Align(
@@ -340,7 +340,7 @@ class _ProductDetailsWidgetState extends State<ProductDetailsWidget> {
                                     const Text(
                                       'Almacenamiento',
                                       style: TextStyle(
-                                        fontFamily: 'Inter',
+                                        fontFamily: 'Raleway',
                                         color: Color(0xFF757575),
                                         fontSize: 17,
                                         fontWeight: FontWeight.normal,
@@ -365,7 +365,7 @@ class _ProductDetailsWidgetState extends State<ProductDetailsWidget> {
                                       onChanged: (val) =>
                                           setState(() => almacenamiento = val),
                                       style: const TextStyle(
-                                        fontFamily: 'Inter',
+                                        fontFamily: 'Raleway',
                                         color: Color(0xFF757575),
                                         fontSize: 17,
                                         fontWeight: FontWeight.normal,
@@ -395,7 +395,7 @@ class _ProductDetailsWidgetState extends State<ProductDetailsWidget> {
                           children: [
                             const Icon(
                               Icons.category_rounded,
-                              color: Color(0xFF74d482),
+                              color: Color(0xFF368C72),
                               size: 40,
                             ),
                             Align(
@@ -412,7 +412,7 @@ class _ProductDetailsWidgetState extends State<ProductDetailsWidget> {
                                     const Text(
                                       'Categoría',
                                       style: TextStyle(
-                                        fontFamily: 'Inter',
+                                        fontFamily: 'Raleway',
                                         color: Color(0xFF757575),
                                         fontSize: 17,
                                         fontWeight: FontWeight.normal,
@@ -437,7 +437,7 @@ class _ProductDetailsWidgetState extends State<ProductDetailsWidget> {
                                       onChanged: (val) =>
                                           setState(() => categoria = val),
                                       style: const TextStyle(
-                                        fontFamily: 'Inter',
+                                        fontFamily: 'Raleway',
                                         color: Color(0xFF757575),
                                         fontSize: 17,
                                         fontWeight: FontWeight.normal,
@@ -467,7 +467,7 @@ class _ProductDetailsWidgetState extends State<ProductDetailsWidget> {
                             const Text(
                               'Cantidad',
                               style: TextStyle(
-                                fontFamily: 'Inter',
+                                fontFamily: 'Raleway',
                                 fontSize: 18,
                               ),
                             ),
@@ -490,7 +490,7 @@ class _ProductDetailsWidgetState extends State<ProductDetailsWidget> {
                                     IconButton(
                                       icon: const Icon(
                                         Icons.remove_circle,
-                                        color: Color(0xFF74d482),
+                                        color: Color(0xFF368C72),
                                         size: 30,
                                       ),
                                       onPressed: () {
@@ -504,7 +504,7 @@ class _ProductDetailsWidgetState extends State<ProductDetailsWidget> {
                                     Text(
                                       cantidad.toString(),
                                       style: const TextStyle(
-                                        fontFamily: 'Inter',
+                                        fontFamily: 'Raleway',
                                         color: Color(0xFF757575),
                                         fontSize: 18,
                                         fontWeight: FontWeight.bold,
@@ -513,7 +513,7 @@ class _ProductDetailsWidgetState extends State<ProductDetailsWidget> {
                                     IconButton(
                                       icon: const Icon(
                                         Icons.add_circle,
-                                        color: Color(0xFF74d482),
+                                        color: Color(0xFF368C72),
                                         size: 30,
                                       ),
                                       onPressed: () {
@@ -535,11 +535,11 @@ class _ProductDetailsWidgetState extends State<ProductDetailsWidget> {
                           child: TextButton(
                             style: const ButtonStyle(
                                 backgroundColor: MaterialStatePropertyAll(
-                                    Color(0xFF74D482))),
+                                    Color(0xFF368C72))),
                             child: const Text(
                               "GUARDAR CAMBIOS",
                               style: TextStyle(
-                                fontFamily: 'Inter',
+                                fontFamily: 'Raleway',
                                 color: Color(0xFFFFFFFF),
                                 fontWeight: FontWeight.w600,
                               ),
@@ -570,7 +570,7 @@ class _ProductDetailsWidgetState extends State<ProductDetailsWidget> {
                             child: const Text(
                               "ELIMINAR PRODUCTO",
                               style: TextStyle(
-                                fontFamily: 'Inter',
+                                fontFamily: 'Raleway',
                                 color: Color(0xFFFFFFFF),
                                 fontWeight: FontWeight.w600,
                               ),

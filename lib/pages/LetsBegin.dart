@@ -39,8 +39,8 @@ class _LetsBeginWidgetState extends State<LetsBeginWidget> {
               child: Text(
                 'VAMOS A COMENZAR!',
                 style: TextStyle(
-                  fontFamily: 'Inter',
-                  color: Color(0xFF72D67E),
+                  fontFamily: 'Raleway',
+                  color: Color(0xFF368C72),
                   fontSize: 28,
                   fontWeight: FontWeight.w500,
                 ),
@@ -66,13 +66,13 @@ class _LetsBeginWidgetState extends State<LetsBeginWidget> {
                   child: Text(
                     'INICIAR SESION',
                     style: TextStyle(
-                      fontFamily: 'Inter',
+                      fontFamily: 'Raleway',
                       color: Colors.white,
                       fontSize: 26,
                     ),
                   ),
                   style: ElevatedButton.styleFrom(
-                    primary: Color(0xFF72D67E),
+                    primary: Color(0xFF368C72),
                     onPrimary: Colors.white,
                     padding: EdgeInsets.zero,
                     shape: RoundedRectangleBorder(
@@ -91,13 +91,13 @@ class _LetsBeginWidgetState extends State<LetsBeginWidget> {
                   child: Text(
                     'REGISTRAR',
                     style: TextStyle(
-                      fontFamily: 'Inter',
+                      fontFamily: 'Raleway',
                       color: Colors.white,
                       fontSize: 26,
                     ),
                   ),
                   style: ElevatedButton.styleFrom(
-                    primary: Color(0xFF72D67E),
+                    primary: Color(0xFF368C72),
                     padding: EdgeInsets.zero,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8),

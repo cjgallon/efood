@@ -47,8 +47,8 @@ class _SignupWidgetState extends State<SignupWidget> {
                   child: Text(
                     'POR FAVOR LLENA TUS DATOS',
                     style: TextStyle(
-                      fontFamily: 'Inter',
-                      color: Color(0xFF72D67E),
+                      fontFamily: 'Raleway',
+                      color: Color(0xFF368C72),
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
                     ),
@@ -70,7 +70,7 @@ class _SignupWidgetState extends State<SignupWidget> {
                       color: Color(0xFFFFFFFF),
                       borderRadius: BorderRadius.circular(10),
                       border: Border.all(
-                        color: Color(0xFFCACACA),
+                        color: Color(0xFFa7e9d1),
                         width: 5,
                       ),
                     ),
@@ -97,7 +97,7 @@ class _SignupWidgetState extends State<SignupWidget> {
                                         30, 10, 0, 0),
                                     child: Icon(
                                       Icons.person,
-                                      color: Color(0xFF74D482),
+                                      color: Color(0xFF368C72),
                                       size: 30,
                                     ),
                                   ),
@@ -112,7 +112,7 @@ class _SignupWidgetState extends State<SignupWidget> {
                                         decoration: InputDecoration(
                                           hintText: 'Tu nombre',
                                           hintStyle: TextStyle(
-                                            fontFamily: 'Inter',
+                                            fontFamily: 'Raleway',
                                             fontSize: 16,
                                           ),
                                           enabledBorder: UnderlineInputBorder(
@@ -162,7 +162,7 @@ class _SignupWidgetState extends State<SignupWidget> {
                                           ),
                                         ),
                                         style: TextStyle(
-                                          fontFamily: 'Inter',
+                                          fontFamily: 'Raleway',
                                           fontSize: 16,
                                         ),
                                         //validator: _model
@@ -200,7 +200,7 @@ class _SignupWidgetState extends State<SignupWidget> {
                                       30, 10, 0, 0),
                                   child: Icon(
                                     Icons.mail_outlined,
-                                    color: Color(0xFF74D482),
+                                    color: Color(0xFF368C72),
                                     size: 30,
                                   ),
                                 ),
@@ -215,7 +215,7 @@ class _SignupWidgetState extends State<SignupWidget> {
                                       decoration: InputDecoration(
                                         hintText: 'Correo Electrónico',
                                         hintStyle: TextStyle(
-                                          fontFamily: 'Inter',
+                                          fontFamily: 'Raleway',
                                           fontSize: 16,
                                         ),
                                         enabledBorder: UnderlineInputBorder(
@@ -261,7 +261,7 @@ class _SignupWidgetState extends State<SignupWidget> {
                                         ),
                                       ),
                                       style: TextStyle(
-                                        fontFamily: 'Inter',
+                                        fontFamily: 'Raleway',
                                         fontSize: 16,
                                       ),
                                       //validator: _model.textController2Validator
@@ -297,7 +297,7 @@ class _SignupWidgetState extends State<SignupWidget> {
                                       30, 0, 0, 0),
                                   child: Icon(
                                     Icons.lock,
-                                    color: Color(0xFF74D482),
+                                    color: Color(0xFF368C72),
                                     size: 30,
                                   ),
                                 ),
@@ -312,7 +312,7 @@ class _SignupWidgetState extends State<SignupWidget> {
                                       decoration: InputDecoration(
                                         hintText: 'Contraseña',
                                         hintStyle: TextStyle(
-                                          fontFamily: 'Inter',
+                                          fontFamily: 'Raleway',
                                           fontSize: 16,
                                         ),
                                         enabledBorder: UnderlineInputBorder(
@@ -358,7 +358,7 @@ class _SignupWidgetState extends State<SignupWidget> {
                                         ),
                                       ),
                                       style: TextStyle(
-                                        fontFamily: 'Inter',
+                                        fontFamily: 'Raleway',
                                         fontSize: 16,
                                       ),
                                       //validator: _model.textController3Validator
@@ -394,7 +394,7 @@ class _SignupWidgetState extends State<SignupWidget> {
                                       30, 0, 0, 0),
                                   child: Icon(
                                     Icons.lock,
-                                    color: Color(0xFF74D482),
+                                    color: Color(0xFF368C72),
                                     size: 30,
                                   ),
                                 ),
@@ -409,7 +409,7 @@ class _SignupWidgetState extends State<SignupWidget> {
                                       decoration: InputDecoration(
                                         hintText: 'Repetir contraseña',
                                         hintStyle: TextStyle(
-                                          fontFamily: 'Inter',
+                                          fontFamily: 'Raleway',
                                           fontSize: 16,
                                         ),
                                         enabledBorder: UnderlineInputBorder(
@@ -455,7 +455,7 @@ class _SignupWidgetState extends State<SignupWidget> {
                                         ),
                                       ),
                                       style: TextStyle(
-                                        fontFamily: 'Inter',
+                                        fontFamily: 'Raleway',
                                         fontSize: 16,
                                       ),
                                       //validator: _model.textController4Validator
@@ -483,7 +483,7 @@ class _SignupWidgetState extends State<SignupWidget> {
                               'Leer términos y condiciones',
                               style: TextStyle(
                                 fontFamily: 'Poppins',
-                                color: Color(0xFF72D67E),
+                                color: Color(0xFF368C72),
                                 fontSize: 8,
                               ),
                             ),
@@ -548,7 +548,7 @@ class _SignupWidgetState extends State<SignupWidget> {
                                     'Acepto los terminos y condiciones',
                                     style: TextStyle(
                                       fontFamily: 'Poppins',
-                                      color: Color(0xFF74D482),
+                                      color: Color(0xFF368C72),
                                       fontSize: 10,
                                     ),
                                   ),
@@ -574,13 +574,13 @@ class _SignupWidgetState extends State<SignupWidget> {
                       child: Text(
                         'REGISTRARSE',
                         style: TextStyle(
-                          fontFamily: 'Inter',
+                          fontFamily: 'Raleway',
                           color: Colors.white,
                           fontSize: 26,
                         ),
                       ),
                       style: ElevatedButton.styleFrom(
-                        primary: Color(0xFF72D67E),
+                        primary: Color(0xFF368C72),
                         padding: EdgeInsets.symmetric(horizontal: 20),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),

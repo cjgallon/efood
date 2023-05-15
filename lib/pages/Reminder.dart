@@ -79,9 +79,9 @@ class _ReminderWidgetState extends State<ReminderWidget> {
                 Text(
                   'RECORDATORIOS',
                   style: TextStyle(
-                    fontFamily: GoogleFonts.getFont('Inter').fontFamily,
+                    fontFamily: GoogleFonts.getFont('Raleway').fontFamily,
                     fontWeight: FontWeight.bold,
-                    color: Color(0xFF72D67E),
+                    color: Color(0xFF368C72),
                     fontSize: MediaQuery.of(context).size.height * 0.04,
                   ),
                 ),
@@ -90,7 +90,7 @@ class _ReminderWidgetState extends State<ReminderWidget> {
                   textAlign: TextAlign.start,
                   maxLines: 3,
                   style: TextStyle(
-                    fontFamily: GoogleFonts.getFont('Inter').fontFamily,
+                    fontFamily: GoogleFonts.getFont('Raleway').fontFamily,
                     fontWeight: FontWeight.w400,
                     color: Colors.black,
                     fontSize: MediaQuery.of(context).size.height * 0.02,
@@ -110,7 +110,7 @@ class _ReminderWidgetState extends State<ReminderWidget> {
                         children: [
                           const Icon(
                             Icons.calendar_today_rounded,
-                            color: Color(0xFF72D67E),
+                            color: Color(0xFF368C72),
                             size: 24,
                           ),
                           Container(
@@ -144,7 +144,7 @@ class _ReminderWidgetState extends State<ReminderWidget> {
                       Text(
                         '(Escoja una opción del menú desplegable)',
                         style: TextStyle(
-                          fontFamily: GoogleFonts.getFont('Inter').fontFamily,
+                          fontFamily: GoogleFonts.getFont('Raleway').fontFamily,
                           fontWeight: FontWeight.w300,
                           color: Colors.black,
                           fontSize: MediaQuery.of(context).size.height * 0.018,
@@ -178,7 +178,7 @@ class _ReminderWidgetState extends State<ReminderWidget> {
                       child: IconButton(
                         icon: const Icon(
                           Icons.watch_later,
-                          color: Color.fromARGB(100, 114, 214, 126),
+                          color: Color(0xFF368C72),
                           size: 30,
                         ),
                         onPressed: () async {},
@@ -209,8 +209,8 @@ class _ReminderWidgetState extends State<ReminderWidget> {
                       ).then((value) => setState(() {}));
                     },
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(
-                          const Color.fromARGB(100, 114, 214, 126)),
+                      backgroundColor:
+                          MaterialStateProperty.all(const Color(0xFF368C72)),
                       shape: MaterialStateProperty.all(
                         const RoundedRectangleBorder(
                           borderRadius: BorderRadius.all(Radius.circular(30)),

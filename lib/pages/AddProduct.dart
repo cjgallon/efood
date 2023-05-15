@@ -85,8 +85,8 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                         child: Text(
                           'AGREGAR PRODUCTO',
                           style: TextStyle(
-                            fontFamily: 'Inter',
-                            color: Color(0xFF74D482),
+                            fontFamily: 'Raleway',
+                            color: Color(0xFF368C72),
                             fontSize: 28,
                             fontWeight: FontWeight.bold,
                           ),
@@ -103,14 +103,14 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                             decoration: const InputDecoration(
                               hintText: 'Nombre',
                               hintStyle: TextStyle(
-                                fontFamily: 'Inter',
+                                fontFamily: 'Raleway',
                                 color: Color(0xFF757575),
                                 fontSize: 24,
                                 fontWeight: FontWeight.w500,
                               ),
                               enabledBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
-                                  color: Color(0x8C74D482),
+                                  color: Color(0xFF368C72),
                                   width: 2,
                                 ),
                                 borderRadius: BorderRadius.only(
@@ -150,7 +150,7 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                               ),
                             ),
                             style: const TextStyle(
-                              fontFamily: 'Inter',
+                              fontFamily: 'Raleway',
                               color: Color(0xFF57636c),
                               fontSize: 24,
                               fontWeight: FontWeight.w500,
@@ -170,7 +170,7 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                           children: const [
                             FaIcon(
                               FontAwesomeIcons.solidCalendarDays,
-                              color: Color(0xFF74d482),
+                              color: Color(0xFF368C72),
                               size: 30,
                             ),
                             Padding(
@@ -179,7 +179,7 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                               child: Text(
                                 'Fecha aprox. de caducidad',
                                 style: TextStyle(
-                                  fontFamily: 'Inter',
+                                  fontFamily: 'Raleway',
                                   color: Color(0xFF757575),
                                   fontSize: 16,
                                   fontWeight: FontWeight.w500,
@@ -218,7 +218,7 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                             decoration: const InputDecoration(
                               hintText: 'fecha',
                               hintStyle: TextStyle(
-                                fontFamily: 'Inter',
+                                fontFamily: 'Raleway',
                                 color: Color(0xFF57636c),
                                 fontSize: 12,
                               ),
@@ -264,7 +264,7 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                               ),
                             ),
                             style: const TextStyle(
-                              fontFamily: 'Inter',
+                              fontFamily: 'Raleway',
                               color: Color(0xFF57636c),
                               fontSize: 12,
                               fontWeight: FontWeight.w300,
@@ -286,8 +286,8 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                         child: Text(
                           'Detalles',
                           style: TextStyle(
-                            fontFamily: 'Inter',
-                            color: Color(0xFF74d482),
+                            fontFamily: 'Raleway',
+                            color: Color(0xFF368C72),
                             fontSize: 17,
                             fontWeight: FontWeight.bold,
                           ),
@@ -302,7 +302,7 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                           children: [
                             const Icon(
                               Icons.inventory,
-                              color: Color(0xFF74d482),
+                              color: Color(0xFF368C72),
                               size: 40,
                             ),
                             Align(
@@ -319,7 +319,7 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                                     const Text(
                                       'Almacenamiento',
                                       style: TextStyle(
-                                        fontFamily: 'Inter',
+                                        fontFamily: 'Raleway',
                                         color: Color(0xFF757575),
                                         fontSize: 17,
                                         fontWeight: FontWeight.normal,
@@ -344,7 +344,7 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                                       onChanged: (val) =>
                                           setState(() => almacenamiento = val),
                                       style: const TextStyle(
-                                        fontFamily: 'Inter',
+                                        fontFamily: 'Raleway',
                                         color: Color(0xFF757575),
                                         fontSize: 17,
                                         fontWeight: FontWeight.normal,
@@ -368,7 +368,7 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                           children: [
                             const Icon(
                               Icons.category_rounded,
-                              color: Color(0xFF74d482),
+                              color: Color(0xFF368C72),
                               size: 40,
                             ),
                             Align(
@@ -385,7 +385,7 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                                     const Text(
                                       'Categoría',
                                       style: TextStyle(
-                                        fontFamily: 'Inter',
+                                        fontFamily: 'Raleway',
                                         color: Color(0xFF757575),
                                         fontSize: 17,
                                         fontWeight: FontWeight.normal,
@@ -410,7 +410,7 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                                       onChanged: (val) =>
                                           setState(() => categoria = val),
                                       style: const TextStyle(
-                                        fontFamily: 'Inter',
+                                        fontFamily: 'Raleway',
                                         color: Color(0xFF757575),
                                         fontSize: 17,
                                         fontWeight: FontWeight.normal,
@@ -434,7 +434,7 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                             const Text(
                               'Cantidad',
                               style: TextStyle(
-                                fontFamily: 'Inter',
+                                fontFamily: 'Raleway',
                                 fontSize: 18,
                               ),
                             ),
@@ -457,7 +457,7 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                                     IconButton(
                                       icon: const Icon(
                                         Icons.remove_circle,
-                                        color: Color(0xFF74d482),
+                                        color: Color(0xFF368C72),
                                         size: 30,
                                       ),
                                       onPressed: () {
@@ -471,7 +471,7 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                                     Text(
                                       cantidad.toString(),
                                       style: const TextStyle(
-                                        fontFamily: 'Inter',
+                                        fontFamily: 'Raleway',
                                         color: Color(0xFF757575),
                                         fontSize: 18,
                                         fontWeight: FontWeight.bold,
@@ -480,7 +480,7 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                                     IconButton(
                                       icon: const Icon(
                                         Icons.add_circle,
-                                        color: Color(0xFF74d482),
+                                        color: Color(0xFF368C72),
                                         size: 30,
                                       ),
                                       onPressed: () {
@@ -502,11 +502,11 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                           child: TextButton(
                             style: const ButtonStyle(
                                 backgroundColor: MaterialStatePropertyAll(
-                                    Color(0xFF74D482))),
+                                    Color(0xFF368C72))),
                             child: const Text(
                               "+ AGREGAR PRODUCTO",
                               style: TextStyle(
-                                  fontFamily: 'Inter',
+                                  fontFamily: 'Raleway',
                                   color: Colors.white,
                                   fontWeight: FontWeight.w600,
                                   fontSize: 20),
@@ -554,7 +554,7 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                   const Text(
                     'Mostrar sugerencias',
                     style: TextStyle(
-                      fontFamily: 'Inter',
+                      fontFamily: 'Raleway',
                       color: Color(0x8E757575),
                       fontSize: 17,
                       fontWeight: FontWeight.normal,
