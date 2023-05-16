@@ -130,10 +130,10 @@ class _UserConfigWidgetState extends State<UserConfigWidget> {
                                 padding:
                                     EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
                                 child: Switch(
-                                  value: _model.switchValue ??= true,
+                                  value: true,
                                   onChanged: (newValue) async {
-                                    setState(
-                                        () => _model.switchValue = newValue!);
+                                    // setState(
+                                    //     () => _model.switchValue = newValue!);
                                   },
                                   activeColor: Color(0x00FFFFFF),
                                   activeTrackColor: Color(0xFF368C72),
