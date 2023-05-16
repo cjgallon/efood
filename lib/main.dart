@@ -1,6 +1,7 @@
 import 'package:efood/FirebaseCentral.dart';
 import 'package:efood/config/configuration.dart';
 import 'package:efood/controllers/product_controller.dart';
+import 'package:efood/controllers/recipes_controller.dart';
 import 'package:efood/controllers/ui_controller.dart';
 import 'package:flutter/material.dart';
 // import 'package:efood/pages/Reminder.dart';
@@ -44,6 +45,7 @@ class MyApp extends StatelessWidget {
     Get.put(AuthenticationController());
     Get.put(UIController());
     Get.put(Product_Controller());
+    Get.put(RecipeController());
 
     return GetMaterialApp(
       title: 'Flutter Demo',
