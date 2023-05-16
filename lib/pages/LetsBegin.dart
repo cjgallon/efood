@@ -48,12 +48,7 @@ class _LetsBeginWidgetState extends State<LetsBeginWidget> {
             ),
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0, 45, 0, 0),
-              child: Image.network(
-                'https://picsum.photos/seed/310/600',
-                width: 300,
-                height: 350,
-                fit: BoxFit.cover,
-              ),
+              child: Image.asset('assets/images/Logo.jpg'),
             ),
             Align(
               alignment: AlignmentDirectional(0, 0),
