@@ -12,6 +12,7 @@ class UserConfigWidget extends StatefulWidget {
 
 class _UserConfigWidgetState extends State<UserConfigWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  final bool value = true;
   final _unfocusNode = FocusNode();
 
   @override
@@ -132,7 +133,8 @@ class _UserConfigWidgetState extends State<UserConfigWidget> {
                                 child: Switch(
                                   value: true,
                                   onChanged: (newValue) async {
-                                    setState(() => newValue = newValue);
+                                    // setState(
+                                    //     () => _model.switchValue = newValue!);
                                   },
                                   activeColor: Color(0x00FFFFFF),
                                   activeTrackColor: Color(0xFF368C72),
