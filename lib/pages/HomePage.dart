@@ -210,6 +210,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       ),
                                       Text(
                                         "${DateTime.parse(e["fecha"]).difference(DateTime.now())}",
+                                        style: TextStyle(fontSize: 9),
                                       ),
                                     ],
                                   ),
@@ -246,7 +247,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                 children: [
                   InkWell(
                     onTap: () {
-                      Navigator.pushNamed(context, "/recepies");
+                      Navigator.pushNamed(context, "/recipes");
                     },
                     child: Container(
                       width: 130,

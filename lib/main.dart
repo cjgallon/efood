@@ -14,8 +14,9 @@ import 'controllers/auth_controller.dart';
 
 import 'pages/AddProduct.dart';
 import 'pages/ProductDetails.dart';
+import 'pages/RecipeDetails.dart';
 import 'pages/login.dart';
-import 'pages/Recepies.dart';
+import 'pages/Recipes.dart';
 import 'pages/HomePage.dart';
 import 'pages/Reminder.dart';
 import 'pages/LetsBegin.dart';
@@ -72,8 +73,9 @@ class MyApp extends StatelessWidget {
         "/login": (context) => const LoginWidget(),
         "/productdetails": (context) => const ProductDetailsWidget(),
         "/addproduct": (context) => const AddProductWidget(),
-        "/recepies": (context) => const RecipesWidget(),
-        "/user": (context) => const UserConfigWidget()
+        "/recipes": (context) => const RecipesWidget(),
+        "/user": (context) => const UserConfigWidget(),
+        "/recipedetails": (context) => const EditRecipeWidget()
       },
     );
   }

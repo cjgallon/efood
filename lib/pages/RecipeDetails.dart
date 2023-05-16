@@ -1,4 +1,6 @@
+import 'package:efood/controllers/recipes_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
@@ -13,10 +15,46 @@ class _EditRecipeWidgetState extends State<EditRecipeWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final _unfocusNode = FocusNode();
   final bool value = true;
+  final RecipeController recipeController = Get.find();
+  Map<String, bool> checks = {};
+  String? recipeName;
+  List<Widget> ingredients = [];
 
   @override
   void initState() {
     super.initState();
+    setState(() {
+      recipeName = recipeController.curRec;
+      recipeController.getIngredients(recipeName!).forEach((key, value) {
+        checks.addAll({"$key": false});
+        ingredients.add(Padding(
+          padding: const EdgeInsets.all(15.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                children: [
+                  StatefulBuilder(
+                    builder: (context, setState) {
+                      return Checkbox(
+                        value: checks["$key"],
+                        onChanged: (newval) async {
+                          setState(() {
+                            checks["$key"] = newval!;
+                          });
+                        },
+                      );
+                    },
+                  ),
+                  Text("$key")
+                ],
+              ),
+              Text("$value")
+            ],
+          ),
+        ));
+      });
+    });
   }
 
   @override
@@ -34,14 +72,14 @@ class _EditRecipeWidgetState extends State<EditRecipeWidget> {
         backgroundColor: Colors.white,
         body: SafeArea(
           child: Align(
-            alignment: AlignmentDirectional(0, 0),
+            alignment: const AlignmentDirectional(0, 0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
                 Align(
-                  alignment: AlignmentDirectional(-1, 0),
+                  alignment: const AlignmentDirectional(-1, 0),
                   child: IconButton(
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.chevron_left_outlined,
                       color: Color(0xFF368C72),
                       size: 30,
@@ -52,17 +90,18 @@ class _EditRecipeWidgetState extends State<EditRecipeWidget> {
                   ),
                 ),
                 Align(
-                  alignment: AlignmentDirectional(-1, 0),
+                  alignment: const AlignmentDirectional(-1, 0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Align(
-                        alignment: AlignmentDirectional(-1, 0),
+                        alignment: const AlignmentDirectional(-1, 0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+                          padding:
+                              const EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                           child: Text(
-                            'Título de receta',
-                            style: TextStyle(
+                            '$recipeName',
+                            style: const TextStyle(
                               fontFamily: 'Raleway',
                               color: Color(0xFF368C72),
                               fontSize: 30,
@@ -72,12 +111,13 @@ class _EditRecipeWidgetState extends State<EditRecipeWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(20, 20, 0, 0),
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(20, 20, 0, 0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
-                          children: [
+                          children: const [
                             Text(
-                              'Productos',
+                              'Ingrediente',
                               style: TextStyle(
                                 fontFamily: 'Raleway',
                                 color: Color(0xFF9D9D9D),
@@ -104,132 +144,10 @@ class _EditRecipeWidgetState extends State<EditRecipeWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 15, 0, 0),
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0, 15, 0, 0),
                         child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(15, 0, 0, 10),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Align(
-                                    alignment: AlignmentDirectional(0, 0),
-                                    child: Theme(
-                                      data: ThemeData(
-                                        checkboxTheme: CheckboxThemeData(
-                                          shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(5),
-                                          ),
-                                        ),
-                                        unselectedWidgetColor: Colors.white,
-                                      ),
-                                      child: Checkbox(
-                                        value: value,
-                                        onChanged: (newValue) async {
-                                          setState(() {});
-                                        },
-                                        activeColor: Color(0xFF368C72),
-                                      ),
-                                    ),
-                                  ),
-                                  Expanded(
-                                    child: Align(
-                                      alignment: AlignmentDirectional(-0.9, 0),
-                                      child: Text(
-                                        'Producto #1',
-                                        style: TextStyle(
-                                          fontFamily: 'Raleway',
-                                          fontSize: 20,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  Expanded(
-                                    child: Align(
-                                      alignment: AlignmentDirectional(0.8, 0),
-                                      child: Text(
-                                        'x Litros',
-                                        style: TextStyle(
-                                          fontFamily: 'Raleway',
-                                          fontSize: 20,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Expanded(
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          children: [
-                            InkWell(
-                              onTap: () {},
-                              child: Container(
-                                width: 130,
-                                height: 100,
-                                decoration: BoxDecoration(
-                                  color: Color(0xFF368C72),
-                                  border: Border.all(
-                                    color: Color(0xFF368C72),
-                                  ),
-                                ),
-                                child: Icon(
-                                  Icons.format_list_bulleted,
-                                  color: Colors.white,
-                                  size: 40,
-                                ),
-                              ),
-                            ),
-                            InkWell(
-                              onTap: () {
-                                Navigator.pushNamed(context, "/homepage");
-                              },
-                              child: Container(
-                                width: 130,
-                                height: 100,
-                                decoration: BoxDecoration(
-                                  color: Color(0xFF368C72),
-                                  border: Border.all(
-                                    color: Color(0xFF368C72),
-                                  ),
-                                ),
-                                child: Icon(
-                                  Icons.all_inbox_sharp,
-                                  color: Colors.white,
-                                  size: 40,
-                                ),
-                              ),
-                            ),
-                            InkWell(
-                              onTap: () {
-                                Navigator.pushNamed(context, "/user");
-                              },
-                              child: Container(
-                                width: 130,
-                                height: 100,
-                                decoration: BoxDecoration(
-                                  color: Color(0xFF368C72),
-                                  border: Border.all(
-                                    color: Color(0xFF368C72),
-                                  ),
-                                ),
-                                child: Icon(
-                                  Icons.person,
-                                  color: Colors.white,
-                                  size: 40,
-                                ),
-                              ),
-                            )
-                          ],
+                          children: ingredients,
                         ),
                       ),
                     ],

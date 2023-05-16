@@ -8,13 +8,16 @@ class RecipeController extends GetxController {
   List<Map<dynamic, dynamic>> recipes = [];
   final databaseRef = FirebaseDatabase.instance.ref();
   final Product_Controller productController = Get.find();
+  String? curRec;
 
   Future<void> getRecipes() async {
+    recipes.clear();
     try {
       final productRef = await databaseRef.child('recipes');
       final snapshot = await productRef.get();
 
       if (snapshot.exists) {
+        print(snapshot.value);
         Map<dynamic, dynamic>? vals = snapshot.value as Map<dynamic, dynamic>;
         recipes.add(vals);
       }
