@@ -238,51 +238,78 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                 ),
               ),
             ),
-            Align(
-                alignment: AlignmentDirectional(0, 0),
-                child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 30),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      IconButton(
-                        icon: Icon(
-                          Icons.ad_units_outlined,
+            Expanded(
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  InkWell(
+                    onTap: () {
+                      Navigator.pushNamed(context, "/recepies");
+                    },
+                    child: Container(
+                      width: 130,
+                      height: 100,
+                      decoration: BoxDecoration(
+                        color: Color(0xFF368C72),
+                        border: Border.all(
                           color: Color(0xFF368C72),
-                          size: 50,
                         ),
-                        onPressed: () {
-                          print('IconButton pressed ...');
-                        },
                       ),
-                      IconButton(
-                        icon: Icon(
-                          Icons.format_list_bulleted,
-                          color: Color(0xFF368C72),
-                          size: 50,
-                        ),
-                        onPressed: () {
-                          print('IconButton pressed ...');
-                        },
+                      child: Icon(
+                        Icons.format_list_bulleted,
+                        color: Colors.white,
+                        size: 40,
                       ),
-                      IconButton(
-                        icon: Icon(
-                          Icons.person,
-                          color: Color(0xFF368C72),
-                          size: 50,
-                        ),
-                        onPressed: () {
-                          print('IconButton pressed ...');
-                        },
-                      ),
-                    ],
+                    ),
                   ),
-                )),
+                  InkWell(
+                    onTap: () {},
+                    child: Container(
+                      width: 130,
+                      height: 100,
+                      decoration: BoxDecoration(
+                        color: Color(0xFF368C72),
+                        border: Border.all(
+                          color: Color(0xFF368C72),
+                        ),
+                      ),
+                      child: Icon(
+                        Icons.all_inbox_sharp,
+                        color: Colors.white,
+                        size: 40,
+                      ),
+                    ),
+                  ),
+                  InkWell(
+                    onTap: () {
+                      Navigator.pushNamed(context, "/user");
+                    },
+                    child: Container(
+                      width: 130,
+                      height: 100,
+                      decoration: BoxDecoration(
+                        color: Color(0xFF368C72),
+                        border: Border.all(
+                          color: Color(0xFF368C72),
+                        ),
+                      ),
+                      child: Icon(
+                        Icons.person,
+                        color: Colors.white,
+                        size: 40,
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
           ],
         ),
       )),
       floatingActionButton: Padding(
-          padding: EdgeInsets.only(bottom: 70),
+          padding: EdgeInsets.only(bottom: 95),
           child: FloatingActionButton(
             onPressed: () {
               Navigator.pushNamed(context, "/addproduct");

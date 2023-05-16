@@ -13,10 +13,12 @@ import 'controllers/auth_controller.dart';
 import 'pages/AddProduct.dart';
 import 'pages/ProductDetails.dart';
 import 'pages/login.dart';
+import 'pages/Recepies.dart';
 import 'pages/HomePage.dart';
 import 'pages/Reminder.dart';
 import 'pages/LetsBegin.dart';
 import 'pages/Signup.dart';
+import 'pages/user_config.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -66,7 +68,9 @@ class MyApp extends StatelessWidget {
         "/reminder": (context) => const ReminderWidget(),
         "/login": (context) => const LoginWidget(),
         "/productdetails": (context) => const ProductDetailsWidget(),
-        "/addproduct": (context) => const AddProductWidget()
+        "/addproduct": (context) => const AddProductWidget(),
+        "/recepies": (context) => const RecipesWidget(),
+        "/user": (context) => const UserConfigWidget()
       },
     );
   }

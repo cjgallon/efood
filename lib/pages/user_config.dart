@@ -12,6 +12,7 @@ class UserConfigWidget extends StatefulWidget {
 
 class _UserConfigWidgetState extends State<UserConfigWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  final bool value = true;
   final _unfocusNode = FocusNode();
 
   @override
