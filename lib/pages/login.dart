@@ -78,7 +78,7 @@ class _LoginWidgetState extends State<LoginWidget> {
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
-              Align(
+              const Align(
                 alignment: AlignmentDirectional(0, 0),
                 child: Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(60, 60, 0, 0),
@@ -93,7 +93,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 100, 0, 0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0, 100, 0, 0),
                 child: Material(
                   color: Colors.transparent,
                   elevation: 0,
@@ -104,10 +104,10 @@ class _LoginWidgetState extends State<LoginWidget> {
                     width: 275,
                     height: 200,
                     decoration: BoxDecoration(
-                      color: Color(0xFFFFFFFF),
+                      color: const Color(0xFFFFFFFF),
                       borderRadius: BorderRadius.circular(10),
                       border: Border.all(
-                        color: Color(0xFFa7e9d1),
+                        color: const Color(0xFFa7e9d1),
                         width: 5,
                       ),
                     ),
@@ -115,21 +115,22 @@ class _LoginWidgetState extends State<LoginWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                          padding:
+                              const EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                           child: Container(
                             width: 275,
                             height: 40,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               color: Color(0xFFFFFFFF),
                             ),
                             child: Align(
-                              alignment: AlignmentDirectional(0, 0),
+                              alignment: const AlignmentDirectional(0, 0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
-                                  Padding(
+                                  const Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         30, 0, 0, 0),
                                     child: Icon(
@@ -139,14 +140,15 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   ),
                                   Expanded(
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          10, 0, 0, 0),
+                                      padding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              10, 0, 0, 0),
                                       child: TextFormField(
                                         controller:
                                             loginController.emailController,
                                         autofocus: true,
                                         obscureText: false,
-                                        decoration: InputDecoration(
+                                        decoration: const InputDecoration(
                                           hintText: 'Correo Electrónico',
                                           hintStyle: TextStyle(
                                             fontFamily: 'Raleway',
@@ -157,8 +159,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                               color: Color(0x00000000),
                                               width: 1,
                                             ),
-                                            borderRadius:
-                                                const BorderRadius.only(
+                                            borderRadius: BorderRadius.only(
                                               topLeft: Radius.circular(4.0),
                                               topRight: Radius.circular(4.0),
                                             ),
@@ -168,8 +169,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                               color: Color(0x00000000),
                                               width: 1,
                                             ),
-                                            borderRadius:
-                                                const BorderRadius.only(
+                                            borderRadius: BorderRadius.only(
                                               topLeft: Radius.circular(4.0),
                                               topRight: Radius.circular(4.0),
                                             ),
@@ -179,8 +179,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                               color: Color(0x00000000),
                                               width: 1,
                                             ),
-                                            borderRadius:
-                                                const BorderRadius.only(
+                                            borderRadius: BorderRadius.only(
                                               topLeft: Radius.circular(4.0),
                                               topRight: Radius.circular(4.0),
                                             ),
@@ -191,14 +190,13 @@ class _LoginWidgetState extends State<LoginWidget> {
                                               color: Color(0x00000000),
                                               width: 1,
                                             ),
-                                            borderRadius:
-                                                const BorderRadius.only(
+                                            borderRadius: BorderRadius.only(
                                               topLeft: Radius.circular(4.0),
                                               topRight: Radius.circular(4.0),
                                             ),
                                           ),
                                         ),
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                           fontFamily: 'Raleway',
                                           fontSize: 16,
                                         ),
@@ -213,7 +211,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                             ),
                           ),
                         ),
-                        Divider(
+                        const Divider(
                           thickness: 3,
                           indent: 30,
                           endIndent: 30,
@@ -222,17 +220,17 @@ class _LoginWidgetState extends State<LoginWidget> {
                         Container(
                           width: 275,
                           height: 40,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             color: Color(0xFFFFFFFF),
                           ),
                           child: Align(
-                            alignment: AlignmentDirectional(0, 0),
+                            alignment: const AlignmentDirectional(0, 0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                Padding(
+                                const Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       30, 0, 0, 0),
                                   child: Icon(
@@ -243,14 +241,15 @@ class _LoginWidgetState extends State<LoginWidget> {
                                 ),
                                 Expanded(
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        10, 0, 0, 0),
+                                    padding:
+                                        const EdgeInsetsDirectional.fromSTEB(
+                                            10, 0, 0, 0),
                                     child: TextFormField(
                                       controller:
                                           loginController.passwordController,
                                       autofocus: true,
                                       obscureText: false,
-                                      decoration: InputDecoration(
+                                      decoration: const InputDecoration(
                                         hintText: 'Contraseña',
                                         hintStyle: TextStyle(
                                           fontFamily: 'Raleway',
@@ -261,7 +260,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                             color: Color(0x00000000),
                                             width: 1,
                                           ),
-                                          borderRadius: const BorderRadius.only(
+                                          borderRadius: BorderRadius.only(
                                             topLeft: Radius.circular(4.0),
                                             topRight: Radius.circular(4.0),
                                           ),
@@ -271,7 +270,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                             color: Color(0x00000000),
                                             width: 1,
                                           ),
-                                          borderRadius: const BorderRadius.only(
+                                          borderRadius: BorderRadius.only(
                                             topLeft: Radius.circular(4.0),
                                             topRight: Radius.circular(4.0),
                                           ),
@@ -281,7 +280,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                             color: Color(0x00000000),
                                             width: 1,
                                           ),
-                                          borderRadius: const BorderRadius.only(
+                                          borderRadius: BorderRadius.only(
                                             topLeft: Radius.circular(4.0),
                                             topRight: Radius.circular(4.0),
                                           ),
@@ -292,13 +291,13 @@ class _LoginWidgetState extends State<LoginWidget> {
                                             color: Color(0x00000000),
                                             width: 1,
                                           ),
-                                          borderRadius: const BorderRadius.only(
+                                          borderRadius: BorderRadius.only(
                                             topLeft: Radius.circular(4.0),
                                             topRight: Radius.circular(4.0),
                                           ),
                                         ),
                                       ),
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                         fontFamily: 'Raleway',
                                         fontSize: 16,
                                       ),
@@ -311,7 +310,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                             ),
                           ),
                         ),
-                        Divider(
+                        const Divider(
                           thickness: 3,
                           indent: 30,
                           endIndent: 30,
@@ -320,18 +319,18 @@ class _LoginWidgetState extends State<LoginWidget> {
                         Container(
                           width: 275,
                           height: 40,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             color: Color(0xFFFFFFFF),
                           ),
                           child: Align(
-                            alignment: AlignmentDirectional(0, 0),
+                            alignment: const AlignmentDirectional(0, 0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       28, 0, 0, 0),
                                   child: Theme(
                                     data: ThemeData(
@@ -341,7 +340,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                                               BorderRadius.circular(0),
                                         ),
                                       ),
-                                      unselectedWidgetColor: Color(0xFF368C72),
+                                      unselectedWidgetColor:
+                                          const Color(0xFF368C72),
                                     ),
                                     child: Checkbox(
                                       value: false,
@@ -352,7 +352,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     ),
                                   ),
                                 ),
-                                Text(
+                                const Text(
                                   'Recordar cuenta',
                                   style: TextStyle(
                                     fontFamily: 'Raleway',
@@ -369,23 +369,23 @@ class _LoginWidgetState extends State<LoginWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 90, 0, 0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0, 90, 0, 0),
                 child: ElevatedButton(
                   onPressed: () async {
                     handleLogin();
                   },
                   style: ElevatedButton.styleFrom(
-                    primary: Color(0xFF368C72),
+                    primary: const Color(0xFF368C72),
                     padding: EdgeInsets.zero,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8),
                     ),
-                    side: BorderSide(
+                    side: const BorderSide(
                       color: Colors.transparent,
                       width: 1,
                     ),
                   ),
-                  child: SizedBox(
+                  child: const SizedBox(
                     width: 200,
                     height: 55,
                     child: Center(

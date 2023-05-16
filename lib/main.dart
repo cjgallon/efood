@@ -1,10 +1,12 @@
 import 'package:efood/FirebaseCentral.dart';
 import 'package:efood/config/configuration.dart';
+import 'package:efood/controllers/notif_controller.dart';
 import 'package:efood/controllers/product_controller.dart';
 import 'package:efood/controllers/ui_controller.dart';
 import 'package:flutter/material.dart';
 // import 'package:efood/pages/Reminder.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:get/get.dart';
 
 import 'controllers/auth_controller.dart';
@@ -41,6 +43,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    Get.put(NotifController());
     Get.put(AuthenticationController());
     Get.put(UIController());
     Get.put(Product_Controller());

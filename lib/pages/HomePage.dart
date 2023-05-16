@@ -209,7 +209,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         size: 60,
                                       ),
                                       Text(
-                                        e["fecha"],
+                                        "${DateTime.parse(e["fecha"]).difference(DateTime.now())}",
                                       ),
                                     ],
                                   ),
